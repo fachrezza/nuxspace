@@ -5,7 +5,12 @@ html {
 }
 
 body {
-  background: #161c2c;
+  background: #f5f7fb;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+}
+
+::selection {
+  background: #38bdf8;
   color: white;
-  font-family: sans-serif;
 }
