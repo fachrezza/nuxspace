@@ -1,60 +1,65 @@
-import {
-  Mail,
-  Phone,
-  Image,
-} from "lucide-react";
+import { Mail, Phone, Image } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 bg-white/5">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-5xl font-bold text-center">
+    <section id="contact" className="py-20 md:py-32 bg-white/5">
+      
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+
+        {/* TITLE */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
           Contact Us
         </h2>
 
-        <p className="text-center text-gray-400 mt-5">
+        <p className="text-center text-gray-400 mt-4 md:mt-5 text-sm md:text-base">
           Let's build something amazing together.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-20">
-          <div className="p-8 rounded-3xl bg-[#111827] border border-white/10 text-center">
-            <Mail className="mx-auto text-blue-500" size={40} />
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-20">
 
-            <h3 className="text-2xl font-semibold mt-6">
+          {/* EMAIL */}
+          <div className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-[#111827] border border-white/10 text-center hover:border-blue-500/30 transition">
+
+            <Mail className="mx-auto text-blue-500" size={36} />
+
+            <h3 className="text-xl md:text-2xl font-semibold mt-5 md:mt-6">
               Email
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-3 md:mt-4 text-sm md:text-base break-all">
               nuxspaceid@gmail.com
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-[#111827] border border-white/10 text-center">
-            <Phone className="mx-auto text-blue-500" size={40} />
+          {/* WHATSAPP */}
+          <div className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-[#111827] border border-white/10 text-center hover:border-blue-500/30 transition">
 
-            <h3 className="text-2xl font-semibold mt-6">
+            <Phone className="mx-auto text-blue-500" size={36} />
+
+            <h3 className="text-xl md:text-2xl font-semibold mt-5 md:mt-6">
               WhatsApp
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-3 md:mt-4 text-sm md:text-base">
               +62 85213840489
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-[#111827] border border-white/10 text-center">
-            <Image
-              className="mx-auto text-blue-500"
-              size={40}
-            />
+          {/* INSTAGRAM */}
+          <div className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-[#111827] border border-white/10 text-center hover:border-blue-500/30 transition sm:col-span-2 md:col-span-1">
 
-            <h3 className="text-2xl font-semibold mt-6">
+            <Image className="mx-auto text-blue-500" size={36} />
+
+            <h3 className="text-xl md:text-2xl font-semibold mt-5 md:mt-6">
               Instagram
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-3 md:mt-4 text-sm md:text-base">
               @nux.space
             </p>
           </div>
+
         </div>
       </div>
     </section>

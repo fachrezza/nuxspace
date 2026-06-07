@@ -5,232 +5,157 @@ import HeroImage from "../assets/FullMockup.png";
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-[#060816] text-white min-h-screen overflow-hidden">
+    <main className="bg-[#060816] text-white min-h-screen overflow-x-hidden">
+
       <Navbar />
 
       {/* HERO */}
-      <section className="pt-40 pb-24 relative overflow-hidden">
-        {/* GLOW */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-3xl rounded-full"></div>
+      <section className="pt-28 md:pt-40 pb-16 md:pb-24 relative overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <span className="text-blue-500 font-semibold tracking-[0.3em] uppercase">
+        {/* GLOW */}
+        <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-500/10 blur-3xl rounded-full" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+
+          <span className="text-blue-500 font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase text-sm md:text-base">
             Portfolio
           </span>
 
-          <h1 className="mt-6 text-6xl md:text-7xl font-black tracking-tight leading-tight">
+          <h1 className="mt-4 md:mt-6 text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight">
             Building The
             <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
-              {" "}
-              Future
+              {" "}Future
             </span>
             <br />
             Digital Experience
           </h1>
 
-          <p className="mt-8 text-slate-400 max-w-2xl text-lg leading-relaxed">
-            NuxSpace is currently crafting modern website
-            experiences, futuristic interfaces, and premium
-            digital branding for upcoming projects.
+          <p className="mt-6 md:mt-8 text-slate-400 max-w-2xl text-sm md:text-lg leading-relaxed">
+            NuxSpace is currently crafting modern website experiences, futuristic interfaces, and premium digital branding for upcoming projects.
           </p>
+
         </div>
       </section>
 
       {/* SHOWCASE */}
-      <section className="pb-32 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* GRID */}
-          <div className="grid lg:grid-cols-3 gap-8">
+      <section className="pb-20 md:pb-32 relative">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+
             {/* MAIN CARD */}
-            <div
-              className="
-                lg:col-span-2
-                relative
-                overflow-hidden
-                rounded-[40px]
-                border border-white/10
-                bg-white/5
-                backdrop-blur-2xl
-                min-h-[500px]
-              "
-            >
-              {/* IMAGE */}
+            <div className="lg:col-span-2 relative overflow-hidden rounded-2xl md:rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl min-h-[350px] md:min-h-[500px]">
+
               <img
                 src={HeroImage}
                 alt=""
-                className="
-                  absolute inset-0
-                  w-full h-full
-                  object-cover
-                  opacity-40
-                "
+                className="absolute inset-0 w-full h-full object-cover opacity-40"
               />
 
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-indigo-950 via-blue-900/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-950 via-blue-900/30 to-transparent" />
 
-              {/* CONTENT */}
-              <div className="relative z-10 p-12 flex flex-col justify-end h-full">
-                
+              <div className="relative z-10 p-6 md:p-12 flex flex-col justify-end h-full">
 
-                <h2 className="mt-8 text-5xl font-black leading-tight">
-                  
+                <h2 className="text-2xl md:text-5xl font-black leading-tight">
                   Futuristic Digital <br />
                   Landing Experience
                 </h2>
 
-                <p className="mt-6 text-slate-300 max-w-2xl text-lg leading-relaxed">
-                  Creating futuristic websites, modern
-                  branding, and immersive user experiences
-                  with clean design and premium technology.
+                <p className="mt-4 md:mt-6 text-slate-300 max-w-2xl text-sm md:text-lg leading-relaxed">
+                  Creating futuristic websites, modern branding, and immersive user experiences with clean design and premium technology.
                 </p>
 
-                {/* TAG */}
-                <div className="flex flex-wrap gap-4 mt-10">
-                  {[
-                    "React",
-                    "UI/UX",
-                    "Motion",
-                  ].map((item, index) => (
+                <div className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-10">
+                  {["React", "UI/UX", "Motion"].map((item, index) => (
                     <div
                       key={index}
-                      className="
-                        px-5 py-3
-                        rounded-2xl
-                        bg-white/5
-                        border border-white/10
-                        text-slate-300
-                      "
+                      className="px-3 md:px-5 py-2 md:py-3 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 text-slate-300 text-xs md:text-base"
                     >
                       {item}
                     </div>
                   ))}
                 </div>
+
               </div>
             </div>
 
             {/* SIDE CARDS */}
-            <div className="space-y-8">
-              {/* CARD 1 */}
-              <div
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border border-dashed border-white/10
-                  bg-white/5
-                  backdrop-blur-xl
-                  p-10
-                  h-[235px]
-                  flex flex-col justify-center
-                "
-              >
-                {/* GLOW */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
+            <div className="space-y-6 md:space-y-8">
 
-                <span className="text-blue-400 text-sm font-semibold tracking-[0.3em] uppercase">
+              {/* CARD 1 */}
+              <div className="relative overflow-hidden rounded-2xl md:rounded-[32px] border border-dashed border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-10 h-[200px] md:h-[235px] flex flex-col justify-center">
+
+                <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-blue-500/10 blur-3xl rounded-full" />
+
+                <span className="text-blue-400 text-xs md:text-sm font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
                   Upcoming
                 </span>
 
-                <h3 className="mt-5 text-3xl font-black">
+                <h3 className="mt-3 md:mt-5 text-xl md:text-3xl font-black">
                   Next Launch
                 </h3>
 
-                <p className="mt-4 text-slate-400 leading-relaxed">
-                  New creative project currently under
-                  development.
+                <p className="mt-2 md:mt-4 text-slate-400 text-sm md:text-base leading-relaxed">
+                  New creative project currently under development.
                 </p>
+
               </div>
 
               {/* CARD 2 */}
-              <div
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border border-dashed border-white/10
-                  bg-white/5
-                  backdrop-blur-xl
-                  p-10
-                  h-[235px]
-                  flex flex-col justify-center
-                "
-              >
-                {/* PULSE */}
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></div>
+              <div className="relative overflow-hidden rounded-2xl md:rounded-[32px] border border-dashed border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-10 h-[200px] md:h-[235px] flex flex-col justify-center">
 
-                  <span className="text-slate-400 text-sm">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-blue-500 animate-pulse"></div>
+                  <span className="text-slate-400 text-xs md:text-sm">
                     In Progress
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-3xl font-black">
+                <h3 className="mt-4 md:mt-6 text-xl md:text-3xl font-black">
                   Future Experience
                 </h3>
 
-                <p className="mt-4 text-slate-400 leading-relaxed">
-                  Experimental UI concepts and futuristic
-                  digital interfaces.
+                <p className="mt-2 md:mt-4 text-slate-400 text-sm md:text-base leading-relaxed">
+                  Experimental UI concepts and futuristic digital interfaces.
                 </p>
+
               </div>
+
             </div>
           </div>
 
           {/* CTA */}
-          <div
-            className="
-              mt-20
-              rounded-[40px]
-              border border-white/10
-              bg-white/5
-              backdrop-blur-2xl
-              p-12
-              text-center
-            "
-          >
-            <span className="text-blue-400 font-semibold tracking-[0.3em] uppercase">
+          <div className="mt-16 md:mt-20 rounded-2xl md:rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 md:p-12 text-center">
+
+            <span className="text-blue-400 font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase text-sm md:text-base">
               Start With NuxSpace
             </span>
 
-            <h2 className="mt-6 text-5xl font-black">
+            <h2 className="mt-4 md:mt-6 text-2xl md:text-5xl font-black">
               Let’s Build Something
-              <span className="text-blue-500">
-                {" "}
-                Extraordinary
-              </span>
+              <span className="text-blue-500"> Extraordinary</span>
             </h2>
 
-            <p className="mt-6 text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
-              We are ready to help startups, personal brands,
-              and businesses create futuristic digital
-              experiences with modern technology and premium
-              design.
+            <p className="mt-4 md:mt-6 text-slate-400 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed">
+              We are ready to help startups, personal brands, and businesses create futuristic digital experiences.
             </p>
 
             <HashLink
               smooth
               to="/#contact"
-              className="
-                inline-flex
-                mt-10
-                px-8 py-4
-                rounded-2xl
-                bg-blue-500
-                font-semibold
-                hover:scale-105
-                hover:shadow-2xl
-                hover:shadow-blue-500/30
-                transition
-              "
+              className="inline-flex mt-6 md:mt-10 px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl bg-blue-500 font-semibold hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 transition text-sm md:text-base"
             >
               Start a Project
             </HashLink>
+
           </div>
+
         </div>
       </section>
 
       <Footer />
+
     </main>
   );
 }
