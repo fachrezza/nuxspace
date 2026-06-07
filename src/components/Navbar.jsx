@@ -29,15 +29,14 @@ export default function Navbar() {
             {isHome ? (
               <>
                 <a href="#home" className="hover:text-blue-500 transition">Home</a>
-                <a href="#services" className="hover:text-blue-500 transition">Services</a>
+                <a href="#catalog" className="hover:text-blue-500 transition">Catalog</a>
                 <a href="#portfolio" className="hover:text-blue-500 transition">Portfolio</a>
                 <a href="#about" className="hover:text-blue-500 transition">About</a>
                 <a href="#contact" className="hover:text-blue-500 transition">Contact</a>
               </>
             ) : (
               <>
-                <Link to="/" className="hover:text-blue-500 transition">Home</Link>
-                <Link to="/portfolio" className="text-blue-500">Portfolio</Link>
+
               </>
             )}
 

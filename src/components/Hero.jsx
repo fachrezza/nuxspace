@@ -111,7 +111,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="#contact"
+                href="#catalog"
                 className="
                   px-8 py-4
                   rounded-2xl
@@ -123,7 +123,7 @@ export default function Hero() {
                   transition
                 "
               >
-                Contact Me
+                Order Now
               </a>
             </div>
 

@@ -7,6 +7,9 @@ import {
 import Home from "./pages/Home";
 import PortfolioPage from "./pages/PortfolioPage";
 import ScrollToTop from "./components/ScrollToTop";
+import CatalogPage from "./pages/CatalogPage";
+
+
 
 function App() {
   return (
@@ -19,6 +22,11 @@ function App() {
         <Route
           path="/portfolio"
           element={<PortfolioPage />}
+        />
+
+        <Route 
+          path="/catalog/:category" 
+          element={<CatalogPage />} 
         />
       </Routes>
     </BrowserRouter>
