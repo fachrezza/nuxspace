@@ -80,7 +80,7 @@ export default function About() {
             </p>
 
             <p className="mt-6 md:mt-8 text-slate-400 text-base md:text-lg leading-relaxed">
-              We believe great design is more than visuals — it’s about creating meaningful connections between brands and people. Through creativity, strategy, and technology, we help businesses grow in the digital era.
+              We believe great design is more than visuals it’s about creating meaningful connections between brands and people. Through creativity, strategy, and technology, we help businesses grow in the digital era.
             </p>
 
             {/* FEATURES */}
