@@ -28,7 +28,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6">
         {/* TITLE */}
         <div className="text-center">
-          <span className="text-sky-400 font-semibold tracking-widest">
+          <span className="text-blue-500 font-semibold tracking-widest">
             SERVICES
           </span>
 
@@ -53,17 +53,18 @@ export default function Services() {
                 overflow-hidden
                 p-10
                 rounded-[32px]
-                bg-white/70
-                backdrop-blur-xl
-                border border-white
-                shadow-lg
+                bg-white/5
+                backdrop-blur-2xl
+                border border-white/10
+                shadow-xl
                 hover:-translate-y-3
-                hover:shadow-2xl
+                hover:border-blue-500/30
+                hover:shadow-indigo-400/10
                 transition
               "
             >
               {/* GLOW */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-sky-200/40 rounded-full blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl"></div>
 
               <div
                 className="
@@ -71,8 +72,8 @@ export default function Services() {
                   w-20 h-20
                   rounded-2xl
                   flex items-center justify-center
-                  bg-sky-100
-                  text-sky-400
+                  bg-blue-100
+                  text-blue-500
                 "
               >
                 {item.icon}
@@ -86,16 +87,7 @@ export default function Services() {
                 {item.desc}
               </p>
 
-              <button
-                className="
-                  mt-8
-                  text-sky-400
-                  font-semibold
-                  flex items-center gap-2
-                "
-              >
-                Learn More →
-              </button>
+ 
             </div>
           ))}
         </div>

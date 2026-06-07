@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="py-10 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <h1 className="text-2xl font-bold">
-          NuX<span className="text-cyan-400">Space</span>
+          NuX<span className="text-blue-500">Space</span>
         </h1>
 
         <p className="text-gray-400 text-sm">
