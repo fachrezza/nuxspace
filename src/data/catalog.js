@@ -130,6 +130,26 @@ const catalog = {
 
         price: "Start from IDR 1JT",
       },
+      {
+        name: "ERP / Accounting System",
+        description:
+          "Custom accounting and business management system for finance, inventory, sales, and operational monitoring.",
+
+        includes: [
+          "Finance dashboard",
+          "Income & expense tracking",
+          "Invoice management",
+          "Inventory system",
+          "Sales & purchase reports",
+          "Role & user management",
+          "PDF / Excel export",
+          "Responsive admin panel",
+          "Authentication system",
+          "Custom business workflow",
+        ],
+
+        price: "Start from IDR 15JT",
+      },
     ],
   },
 
