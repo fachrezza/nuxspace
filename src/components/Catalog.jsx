@@ -31,27 +31,17 @@ export default function Catalog() {
   return (
     <section
       id="catalog"
-      className="py-28 relative overflow-hidden"
+      className="
+        py-28
+        relative
+      "
     >
 
-      {/* GLOW */}
       <div className="
-        absolute top-0 left-0
-        w-[300px] h-[300px]
-        bg-blue-400/10
-        blur-3xl
-        rounded-full
-      " />
-
-      <div className="
-        absolute bottom-0 right-0
-        w-[400px] h-[400px]
-        bg-indigo-400/10
-        blur-3xl
-        rounded-full
-      " />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        max-w-7xl
+        mx-auto
+        px-6
+      ">
 
         {/* HEADER */}
         <div className="text-center">
@@ -67,19 +57,24 @@ export default function Catalog() {
 
           <h2 className="
             mt-5
+
             text-4xl md:text-5xl
             font-black
-            tracking-tight
+
+            text-slate-900
+            dark:text-white
           ">
             Explore Our Service Catalog Below
           </h2>
 
           <p className="
             mt-6
+
             text-slate-600
+            dark:text-slate-400
+
             max-w-2xl
             mx-auto
-            leading-relaxed
           ">
             Select a category to see detailed services,
             features, and pricing.
@@ -91,6 +86,7 @@ export default function Catalog() {
         <div className="
           grid lg:grid-cols-3
           gap-8
+
           mt-20
         ">
 
@@ -105,33 +101,41 @@ export default function Catalog() {
                   relative
 
                   p-8
+
                   rounded-[28px]
 
                   bg-white/80
+                  dark:bg-white/5
+
                   backdrop-blur-xl
 
                   border border-slate-200
+                  dark:border-white/10
 
                   shadow-xl
                   shadow-slate-200/40
+                  dark:shadow-black/20
 
+                  hover:border-blue-500/30
                   hover:-translate-y-2
-                  hover:shadow-2xl
-                  hover:shadow-blue-100/40
-                  hover:border-blue-400/30
 
                   transition duration-300
                 "
               >
 
                 {/* TOP */}
-                <div className="flex items-center gap-4">
+                <div className="
+                  flex items-center
+                  gap-4
+                ">
 
                   <div className="
                     p-3
+
                     rounded-xl
 
                     bg-blue-500/10
+
                     text-blue-500
                   ">
                     <Icon size={28} />
@@ -141,7 +145,9 @@ export default function Catalog() {
 
                     <span className="
                       text-xs
+
                       text-blue-500
+
                       tracking-widest
                       uppercase
                     ">
@@ -151,7 +157,9 @@ export default function Catalog() {
                     <h3 className="
                       text-xl
                       font-bold
+
                       text-slate-900
+                      dark:text-white
                     ">
                       {category.title}
                     </h3>
@@ -162,13 +170,18 @@ export default function Catalog() {
 
                 <div className="
                   h-px
+
                   bg-slate-200
+                  dark:bg-white/10
+
                   my-6
                 " />
 
                 {/* DESCRIPTION */}
                 <p className="
                   text-slate-600
+                  dark:text-slate-400
+
                   text-sm
                   leading-relaxed
                 ">
@@ -176,29 +189,33 @@ export default function Catalog() {
                 </p>
 
                 {/* PACKAGE LIST */}
-                <div className="mt-8 space-y-4">
+                <div className="
+                  mt-8
+                  space-y-4
+                ">
 
                   {category.items.slice(0, 3).map((item, index) => (
                     <div
                       key={index}
                       className="
                         p-4
+
                         rounded-2xl
 
                         bg-slate-50
+                        dark:bg-white/[0.03]
 
                         border border-slate-200
+                        dark:border-white/5
 
-                        hover:border-blue-300/40
-                        hover:bg-white
+                        hover:border-blue-500/20
 
                         transition
                       "
                     >
 
                       <div className="
-                        flex items-start
-                        justify-between
+                        flex items-start justify-between
                         gap-4
                       ">
 
@@ -206,15 +223,21 @@ export default function Catalog() {
 
                           <h4 className="
                             font-semibold
+
                             text-slate-900
+                            dark:text-white
                           ">
                             {item.name}
                           </h4>
 
                           <p className="
                             text-sm
+
                             text-slate-600
+                            dark:text-slate-400
+
                             mt-1
+
                             line-clamp-2
                           ">
                             {item.description}
@@ -226,8 +249,8 @@ export default function Catalog() {
 
                       <div className="
                         mt-4
-                        flex items-center
-                        justify-between
+
+                        flex items-center justify-between
                       ">
 
                         <span className="
@@ -252,8 +275,7 @@ export default function Catalog() {
                     mt-8
 
                     inline-flex
-                    items-center
-                    justify-center
+                    items-center justify-center
                     gap-2
 
                     w-full
@@ -270,13 +292,16 @@ export default function Catalog() {
 
                     hover:scale-[1.02]
                     hover:shadow-xl
-                    hover:shadow-blue-300/40
+                    hover:shadow-blue-300/30
 
                     transition
                   "
                 >
+
                   See More
+
                   <ArrowRight size={18} />
+
                 </Link>
 
               </div>
@@ -284,7 +309,9 @@ export default function Catalog() {
           })}
 
         </div>
+
       </div>
+
     </section>
   );
 }

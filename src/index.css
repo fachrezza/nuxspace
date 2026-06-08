@@ -1,19 +1,28 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #f8fafc;
-  color: #0f172a;
   font-family: sans-serif;
   overflow-x: hidden;
   position: relative;
 
+  background: #f8fafc;
+  color: #0f172a;
+
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+/* DARK MODE */
+.dark body {
+  background: #060816;
+  color: #f8fafc;
 }
 
 /* SCROLLBAR */
@@ -25,26 +34,22 @@ body {
   background: #e2e8f0;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #060816;
+}
+
 ::-webkit-scrollbar-thumb {
-  background: #38bdf8;
+  background: #3b82f6;
   border-radius: 999px;
 }
 
 /* TEXT SELECTION */
 ::selection {
-  background: #38bdf8;
+  background: #3b82f6;
   color: white;
 }
 
-/* GLOBAL TRANSITION */
-* {
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
-}
-
-/* AMBIENT GLOW */
+/* GLOBAL GLOW */
 body::before,
 body::after {
   content: "";
@@ -54,19 +59,25 @@ body::after {
   height: 600px;
   transform: translateY(-50%);
   filter: blur(140px);
-  opacity: 0.1;
+  opacity: 0.18;
   z-index: -1;
   pointer-events: none;
 }
 
-/* LEFT GLOW */
 body::before {
   left: -250px;
-  background: radial-gradient(circle, #38bdf8, transparent 60%);
+  background: radial-gradient(circle, #60a5fa, transparent 60%);
 }
 
-/* RIGHT GLOW */
 body::after {
   right: -250px;
   background: radial-gradient(circle, #818cf8, transparent 60%);
+}
+
+.dark body::before {
+  opacity: 0.25;
+}
+
+.dark body::after {
+  opacity: 0.25;
 }

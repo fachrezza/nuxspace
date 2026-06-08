@@ -13,65 +13,73 @@ export default function Portfolio() {
     >
 
       {/* GLOW */}
-      <div className="
-        absolute top-0 right-0
-        w-[250px] md:w-[400px]
-        h-[250px] md:h-[400px]
+      <div
+        className="
+          absolute
+          top-0 right-0
 
-        bg-blue-400/10
-        blur-3xl
-        rounded-full
-      " />
+          w-[250px] md:w-[400px]
+          h-[250px] md:h-[400px]
 
-      <div className="
-        absolute bottom-0 left-0
-        w-[300px] md:w-[500px]
-        h-[300px] md:h-[500px]
+          bg-blue-500/10
+          blur-3xl
+          rounded-full
+        "
+      />
 
-        bg-indigo-400/10
-        blur-3xl
-        rounded-full
-      " />
+      <div
+        className="
+          max-w-7xl
+          mx-auto
 
-      <div className="
-        max-w-7xl
-        mx-auto
-        px-4 sm:px-6
-        relative z-10
-      ">
+          px-4 sm:px-6
+
+          relative z-10
+        "
+      >
 
         {/* HEADER */}
-        <div className="
-          flex flex-col md:flex-row
-          md:items-end
-          justify-between
-          gap-6
-        ">
+        <div
+          className="
+            flex flex-col
+            md:flex-row md:items-end
+            justify-between
+
+            gap-6
+          "
+        >
 
           <div>
 
-            <span className="
-              text-blue-500
-              font-semibold
-              tracking-[0.2em] md:tracking-[0.3em]
-              uppercase
-              text-sm md:text-base
-            ">
+            <span
+              className="
+                text-blue-500
+                font-semibold
+
+                tracking-[0.2em] md:tracking-[0.3em]
+                uppercase
+
+                text-sm md:text-base
+              "
+            >
               Portfolio
             </span>
 
-            <h2 className="
-              mt-3 md:mt-5
+            <h2
+              className="
+                mt-3 md:mt-5
 
-              text-3xl
-              sm:text-4xl
-              md:text-5xl
+                text-3xl
+                sm:text-4xl
+                md:text-5xl
 
-              font-black
-              tracking-tight
+                font-black
+                tracking-tight
 
-              text-slate-900
-            ">
+                text-slate-900
+                dark:text-white
+              "
+            >
               Featured Projects
             </h2>
 
@@ -95,71 +103,82 @@ export default function Portfolio() {
               font-semibold
 
               shadow-lg
-              shadow-blue-300/30
+              shadow-blue-500/20
 
               transition-all duration-300
 
               hover:scale-105
               hover:shadow-2xl
-              hover:shadow-blue-300/40
+              hover:shadow-indigo-500/30
 
               overflow-hidden
             "
           >
 
-            <span className="
-              absolute inset-0
-              bg-white/10
+            <span
+              className="
+                absolute inset-0
 
-              opacity-0
-              group-hover:opacity-100
+                bg-white/10
 
-              transition
-            " />
+                opacity-0
+                group-hover:opacity-100
 
-            View All Portfolio
+                transition
+              "
+            />
+
+            <span className="relative z-10">
+              View All Portfolio
+            </span>
 
           </Link>
 
         </div>
 
         {/* GRID */}
-        <div className="
-          grid
-          grid-cols-1 md:grid-cols-3
+        <div
+          className="
+            grid
+            grid-cols-1 md:grid-cols-3
 
-          gap-6 md:gap-8
+            gap-6 md:gap-8
 
-          mt-12 md:mt-20
-        ">
+            mt-12 md:mt-20
+          "
+        >
 
           {/* MAIN CARD */}
-          <div className="
-            group
-            relative
-            overflow-hidden
+          <div
+            className="
+              group
+              relative
+              overflow-hidden
 
-            rounded-2xl md:rounded-[32px]
+              rounded-2xl md:rounded-[32px]
 
-            bg-white/80
-            backdrop-blur-xl
+              bg-white/80
+              dark:bg-white/5
 
-            border border-slate-200
+              backdrop-blur-xl
 
-            shadow-xl
-            shadow-slate-200/40
+              border border-slate-200
+              dark:border-white/10
 
-            hover:border-blue-400/30
-            hover:shadow-2xl
-            hover:shadow-blue-100/40
+              shadow-xl
+              shadow-slate-200/40
+              dark:shadow-black/20
 
-            transition
-          ">
+              hover:border-blue-500/30
+
+              transition
+            "
+          >
 
             {/* IMAGE */}
             <img
               src={ImgH}
-              alt=""
+              alt="Portfolio Preview"
               className="
                 h-[220px]
                 sm:h-[300px]
@@ -169,71 +188,82 @@ export default function Portfolio() {
                 object-cover
 
                 group-hover:scale-110
+
                 transition duration-700
               "
             />
 
             {/* OVERLAY */}
-            <div className="
-              absolute inset-0
+            <div
+              className="
+                absolute inset-0
 
-              bg-gradient-to-t
-              from-slate-900/90
-              via-blue-900/20
-              to-transparent
-            " />
+                bg-gradient-to-t
+                from-slate-900/80
+                via-blue-900/20
+                to-transparent
+              "
+            />
 
             {/* CONTENT */}
-            <div className="
-              absolute bottom-0 left-0
-              p-5 md:p-8
-            ">
+            <div
+              className="
+                absolute
+                bottom-0 left-0
 
-              <span className="
-                px-3 md:px-4
-                py-1 md:py-2
+                p-5 md:p-8
+              "
+            >
 
-                rounded-full
+              <span
+                className="
+                  px-3 md:px-4
+                  py-1 md:py-2
 
-                bg-blue-500/10
+                  rounded-full
 
-                border border-blue-300/20
+                  bg-blue-500/10
+                  border border-blue-500/20
 
-                text-blue-200
+                  text-blue-500
 
-                text-[10px] md:text-xs
-                font-semibold
+                  text-[10px] md:text-xs
+                  font-semibold
 
-                tracking-widest
-                uppercase
-              ">
+                  tracking-widest
+                  uppercase
+                "
+              >
                 Vision Concept
               </span>
 
-              <h3 className="
-                mt-3 md:mt-5
+              <h3
+                className="
+                  mt-3 md:mt-5
 
-                text-xl md:text-3xl
-                font-black
+                  text-xl md:text-3xl
+                  font-black
 
-                text-white
-              ">
+                  text-white
+                "
+              >
                 Futuristic Digital Landing Experience
               </h3>
 
-              <p className="
-                mt-3 md:mt-4
+              <p
+                className="
+                  mt-3 md:mt-4
 
-                text-slate-200
+                  text-slate-200
 
-                text-sm md:text-base
-                leading-relaxed
+                  text-sm md:text-base
+                  leading-relaxed
 
-                line-clamp-3
-              ">
-                Creating futuristic websites,
-                modern branding, and immersive
-                user experiences with clean design
+                  line-clamp-3
+                "
+              >
+                Creating futuristic websites, modern branding,
+                and immersive user experiences with clean design
                 and premium technology.
               </p>
 
@@ -242,87 +272,108 @@ export default function Portfolio() {
           </div>
 
           {/* UPCOMING 1 */}
-          <div className="
-            relative
-            overflow-hidden
-
-            rounded-2xl md:rounded-[32px]
-
-            bg-white/80
-            backdrop-blur-xl
-
-            border border-dashed border-slate-300
-
-            shadow-xl
-            shadow-slate-200/40
-
-            h-[220px]
-            sm:h-[300px]
-            md:h-[350px]
-
-            flex items-center justify-center
-          ">
-
-            <div className="
-              absolute inset-0
-              bg-white/50
-            " />
-
-            <div className="
+          <div
+            className="
               relative
-              text-center
-              px-6
-            ">
+              overflow-hidden
 
-              <div className="
-                w-14 md:w-20
-                h-14 md:h-20
+              rounded-2xl md:rounded-[32px]
 
-                rounded-full
+              bg-white/80
+              dark:bg-white/5
 
-                bg-blue-500/10
+              backdrop-blur-xl
 
-                border border-blue-300/20
+              border border-dashed
+              border-slate-300
+              dark:border-white/10
 
-                flex items-center justify-center
+              shadow-xl
+              shadow-slate-200/40
+              dark:shadow-black/20
 
-                mx-auto
-              ">
+              h-[220px]
+              sm:h-[300px]
+              md:h-[350px]
 
-                <div className="
-                  w-3 md:w-4
-                  h-3 md:h-4
+              flex items-center justify-center
+            "
+          >
+
+            <div
+              className="
+                absolute inset-0
+
+                bg-white/40
+                dark:bg-black/50
+              "
+            />
+
+            <div
+              className="
+                relative
+                text-center
+
+                px-6
+              "
+            >
+
+              <div
+                className="
+                  w-14 md:w-20
+                  h-14 md:h-20
 
                   rounded-full
 
-                  bg-blue-500
+                  bg-blue-500/10
+                  border border-blue-500/20
 
-                  animate-pulse
-                " />
+                  flex items-center justify-center
+
+                  mx-auto
+                "
+              >
+
+                <div
+                  className="
+                    w-3 md:w-4
+                    h-3 md:h-4
+
+                    rounded-full
+
+                    bg-blue-500
+                    animate-pulse
+                  "
+                />
 
               </div>
 
-              <h3 className="
-                mt-5 md:mt-8
+              <h3
+                className="
+                  mt-5 md:mt-8
 
-                text-xl md:text-3xl
-                font-black
+                  text-xl md:text-3xl
+                  font-black
 
-                text-slate-900
-              ">
+                  text-slate-900
+                  dark:text-white
+                "
+              >
                 Upcoming Project
               </h3>
 
-              <p className="
-                mt-3 md:mt-4
+              <p
+                className="
+                  mt-3 md:mt-4
 
-                text-slate-600
+                  text-slate-600
+                  dark:text-slate-400
 
-                text-sm md:text-base
-                leading-relaxed
-              ">
-                New creative project currently
-                under development.
+                  text-sm md:text-base
+                  leading-relaxed
+                "
+              >
+                New creative project currently under development.
               </p>
 
             </div>
@@ -330,97 +381,123 @@ export default function Portfolio() {
           </div>
 
           {/* UPCOMING 2 */}
-          <div className="
-            relative
-            overflow-hidden
-
-            rounded-2xl md:rounded-[32px]
-
-            bg-white/80
-            backdrop-blur-xl
-
-            border border-dashed border-slate-300
-
-            shadow-xl
-            shadow-slate-200/40
-
-            h-[220px]
-            sm:h-[300px]
-            md:h-[350px]
-
-            flex items-center justify-center
-          ">
-
-            <div className="
-              absolute
-              w-32 md:w-40
-              h-32 md:h-40
-
-              bg-blue-400/10
-              blur-3xl
-
-              rounded-full
-            " />
-
-            <div className="
+          <div
+            className="
               relative
-              text-center
-              px-6
-            ">
+              overflow-hidden
 
-              <span className="
-                text-blue-500
+              rounded-2xl md:rounded-[32px]
 
-                text-xs md:text-sm
-                font-semibold
+              bg-white/80
+              dark:bg-white/5
 
-                tracking-[0.2em] md:tracking-[0.3em]
-                uppercase
-              ">
+              backdrop-blur-xl
+
+              border border-dashed
+              border-slate-300
+              dark:border-white/10
+
+              shadow-xl
+              shadow-slate-200/40
+              dark:shadow-black/20
+
+              h-[220px]
+              sm:h-[300px]
+              md:h-[350px]
+
+              flex items-center justify-center
+            "
+          >
+
+            <div
+              className="
+                absolute
+
+                w-32 md:w-40
+                h-32 md:h-40
+
+                bg-blue-500/20
+                blur-3xl
+
+                rounded-full
+              "
+            />
+
+            <div
+              className="
+                relative
+                text-center
+
+                px-6
+              "
+            >
+
+              <span
+                className="
+                  text-blue-500
+
+                  text-xs md:text-sm
+                  font-semibold
+
+                  tracking-[0.2em] md:tracking-[0.3em]
+                  uppercase
+                "
+              >
                 NuxSpace
               </span>
 
-              <h3 className="
-                mt-4 md:mt-6
+              <h3
+                className="
+                  mt-4 md:mt-6
 
-                text-xl md:text-3xl
-                font-black
+                  text-xl md:text-3xl
+                  font-black
 
-                text-slate-900
-              ">
+                  text-slate-900
+                  dark:text-white
+                "
+              >
                 Building Something Extraordinary
               </h3>
 
-              <p className="
-                mt-3 md:mt-4
+              <p
+                className="
+                  mt-3 md:mt-4
 
-                text-slate-600
+                  text-slate-600
+                  dark:text-slate-400
 
-                text-sm md:text-base
-                leading-relaxed
-              ">
-                More premium website and design
-                projects coming soon.
+                  text-sm md:text-base
+                  leading-relaxed
+                "
+              >
+                More premium website and design projects
+                coming soon.
               </p>
 
-              <div className="
-                mt-6 md:mt-8
+              <div
+                className="
+                  mt-6 md:mt-8
 
-                inline-flex
+                  inline-flex
 
-                px-4 md:px-5
-                py-2 md:py-3
+                  px-4 md:px-5
+                  py-2 md:py-3
 
-                rounded-full
+                  rounded-full
 
-                bg-slate-100
+                  bg-slate-100
+                  dark:bg-white/5
 
-                border border-slate-200
+                  border border-slate-200
+                  dark:border-white/10
 
-                text-slate-600
+                  text-slate-600
+                  dark:text-slate-300
 
-                text-xs md:text-sm
-              ">
+                  text-xs md:text-sm
+                "
+              >
                 Currently Expanding Portfolio
               </div>
 
@@ -431,6 +508,7 @@ export default function Portfolio() {
         </div>
 
       </div>
+
     </section>
   );
 }

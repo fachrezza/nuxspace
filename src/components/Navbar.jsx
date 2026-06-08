@@ -10,43 +10,64 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-5">
 
-        <div className="
-          bg-white/80
-          backdrop-blur-2xl
+        <div
+          className="
+            bg-white/80
+            dark:bg-white/5
 
-          border border-slate-200
+            backdrop-blur-2xl
 
-          rounded-2xl
+            border border-slate-200
+            dark:border-white/10
 
-          px-5 md:px-8
-          py-3 md:py-4
+            rounded-2xl
 
-          flex items-center justify-between
+            px-5 md:px-8
+            py-3 md:py-4
 
-          shadow-xl
-          shadow-slate-200/40
-        ">
+            flex items-center justify-between
+
+            shadow-xl
+            shadow-slate-200/40
+            dark:shadow-black/20
+
+            transition-colors duration-300
+          "
+        >
 
           {/* LOGO */}
-          <Link to="/" className="shrink-0">
+          <Link
+            to="/"
+            className="shrink-0"
+          >
 
-            <h1 className="
-              text-2xl
-              font-black
-              tracking-tight
-            ">
-              <span className="
-                bg-gradient-to-r
-                from-blue-500
-                to-indigo-500
+            <h1
+              className="
+                text-2xl
+                font-black
+                tracking-tight
+              "
+            >
 
-                bg-clip-text
-                text-transparent
-              ">
+              <span
+                className="
+                  bg-gradient-to-r
+                  from-blue-500
+                  to-indigo-500
+
+                  bg-clip-text
+                  text-transparent
+                "
+              >
                 NuX
               </span>
 
-              <span className="text-slate-900">
+              <span
+                className="
+                  text-slate-900
+                  dark:text-white
+                "
+              >
                 Space
               </span>
 
@@ -55,14 +76,18 @@ export default function Navbar() {
           </Link>
 
           {/* NAV */}
-          <nav className="
-            hidden md:flex
-            items-center
-            gap-6 lg:gap-8
+          <nav
+            className="
+              hidden md:flex
 
-            text-sm
-            font-medium
-          ">
+              items-center
+
+              gap-6 lg:gap-8
+
+              text-sm
+              font-medium
+            "
+          >
 
             {isHome ? (
               <>
@@ -70,7 +95,10 @@ export default function Navbar() {
                   href="#home"
                   className="
                     text-slate-600
+                    dark:text-slate-300
+
                     hover:text-blue-500
+
                     transition
                   "
                 >
@@ -81,7 +109,10 @@ export default function Navbar() {
                   href="#catalog"
                   className="
                     text-slate-600
+                    dark:text-slate-300
+
                     hover:text-blue-500
+
                     transition
                   "
                 >
@@ -92,7 +123,10 @@ export default function Navbar() {
                   href="#portfolio"
                   className="
                     text-slate-600
+                    dark:text-slate-300
+
                     hover:text-blue-500
+
                     transition
                   "
                 >
@@ -103,7 +137,10 @@ export default function Navbar() {
                   href="#about"
                   className="
                     text-slate-600
+                    dark:text-slate-300
+
                     hover:text-blue-500
+
                     transition
                   "
                 >
@@ -114,24 +151,24 @@ export default function Navbar() {
                   href="#contact"
                   className="
                     text-slate-600
+                    dark:text-slate-300
+
                     hover:text-blue-500
+
                     transition
                   "
                 >
                   Contact
                 </a>
               </>
-            ) : (
-              <>
-              </>
-            )}
+            ) : null}
 
           </nav>
 
           {/* RIGHT */}
           <div className="flex items-center gap-4">
 
-            {/* THEME */}
+            {/* THEME TOGGLE */}
             <ThemeToggle />
 
             {/* BUTTON */}

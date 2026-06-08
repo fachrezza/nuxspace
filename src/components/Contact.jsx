@@ -1,274 +1,267 @@
-import {
-  Mail,
-  Phone,
-  Image,
-} from "lucide-react";
+import { Mail, Phone, Image } from "lucide-react";
 
 export default function Contact() {
   return (
     <section
       id="contact"
       className="
-        relative
         py-20 md:py-32
-        overflow-hidden
+
+        bg-slate-100/70
+        dark:bg-white/5
+
+        transition-colors duration-300
       "
     >
-
-      {/* GLOW */}
-      <div className="
-        absolute top-0 left-0
-        w-[300px] h-[300px]
-        bg-blue-400/10
-        blur-3xl
-        rounded-full
-      " />
-
-      <div className="
-        absolute bottom-0 right-0
-        w-[400px] h-[400px]
-        bg-indigo-400/10
-        blur-3xl
-        rounded-full
-      " />
 
       <div className="
         max-w-5xl
         mx-auto
+
         px-4 sm:px-6
-        relative z-10
       ">
 
         {/* TITLE */}
-        <div className="text-center">
+        <h2
+          className="
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
 
-          <span className="
-            text-blue-500
-            font-semibold
-            tracking-[0.3em]
-            uppercase
-            text-sm
-          ">
-            Contact
-          </span>
-
-          <h2 className="
-            mt-4
-            text-3xl sm:text-4xl md:text-5xl
-            font-black
-            tracking-tight
-          ">
-            Let’s Build Something
-            <span className="
-              bg-gradient-to-r
-              from-blue-500
-              to-indigo-500
-              bg-clip-text
-              text-transparent
-            ">
-              {" "}Amazing
-            </span>
-          </h2>
-
-          <p className="
-            text-slate-600
-            mt-5
-            text-sm md:text-base
-            max-w-2xl
-            mx-auto
-            leading-relaxed
-          ">
-            Ready to start your next project?
-            Contact NuxSpace and let’s create
-            a modern digital experience together.
-          </p>
-
-        </div>
-
-        {/* GRID */}
-        <div className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          md:grid-cols-3
-
-          gap-6 md:gap-8
-          mt-12 md:mt-20
-        ">
-
-          {/* EMAIL */}
-          <div className="
-            p-6 md:p-8
-
-            rounded-2xl md:rounded-3xl
-
-            bg-white/80
-            backdrop-blur-xl
-
-            border border-slate-200
-
-            shadow-xl
-            shadow-slate-200/40
-
+            font-bold
             text-center
 
-            hover:-translate-y-2
-            hover:border-blue-400/30
-            hover:shadow-2xl
-            hover:shadow-blue-100/40
+            text-slate-900
+            dark:text-white
+          "
+        >
+          Contact Us
+        </h2>
 
-            transition
-          ">
+        <p
+          className="
+            text-center
 
-            <div className="
-              w-16 h-16
-              mx-auto
+            text-slate-600
+            dark:text-slate-400
 
-              rounded-2xl
+            mt-4 md:mt-5
 
-              bg-blue-500/10
+            text-sm md:text-base
+          "
+        >
+          Let's build something amazing together.
+        </p>
 
-              flex items-center justify-center
-            ">
-              <Mail
-                className="text-blue-500"
-                size={32}
-              />
-            </div>
+        {/* GRID */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            md:grid-cols-3
 
-            <h3 className="
-              text-xl md:text-2xl
-              font-bold
-              mt-6
-            ">
+            gap-6 md:gap-8
+
+            mt-12 md:mt-20
+          "
+        >
+
+          {/* EMAIL */}
+          <div
+            className="
+              p-6 md:p-8
+
+              rounded-2xl md:rounded-3xl
+
+              bg-white/80
+              dark:bg-[#111827]
+
+              backdrop-blur-xl
+
+              border border-slate-200
+              dark:border-white/10
+
+              shadow-xl
+              shadow-slate-200/40
+              dark:shadow-black/20
+
+              text-center
+
+              hover:border-blue-500/30
+              hover:-translate-y-1
+
+              transition
+            "
+          >
+
+            <Mail
+              className="
+                mx-auto
+                text-blue-500
+              "
+              size={36}
+            />
+
+            <h3
+              className="
+                text-xl md:text-2xl
+                font-semibold
+
+                mt-5 md:mt-6
+
+                text-slate-900
+                dark:text-white
+              "
+            >
               Email
             </h3>
 
-            <p className="
-              text-slate-600
-              mt-4
-              text-sm md:text-base
-              break-all
-            ">
+            <p
+              className="
+                text-slate-600
+                dark:text-slate-400
+
+                mt-3 md:mt-4
+
+                text-sm md:text-base
+
+                break-all
+              "
+            >
               nuxspaceid@gmail.com
             </p>
 
           </div>
 
           {/* WHATSAPP */}
-          <div className="
-            p-6 md:p-8
+          <div
+            className="
+              p-6 md:p-8
 
-            rounded-2xl md:rounded-3xl
+              rounded-2xl md:rounded-3xl
 
-            bg-white/80
-            backdrop-blur-xl
+              bg-white/80
+              dark:bg-[#111827]
 
-            border border-slate-200
+              backdrop-blur-xl
 
-            shadow-xl
-            shadow-slate-200/40
+              border border-slate-200
+              dark:border-white/10
 
-            text-center
+              shadow-xl
+              shadow-slate-200/40
+              dark:shadow-black/20
 
-            hover:-translate-y-2
-            hover:border-blue-400/30
-            hover:shadow-2xl
-            hover:shadow-blue-100/40
+              text-center
 
-            transition
-          ">
+              hover:border-blue-500/30
+              hover:-translate-y-1
 
-            <div className="
-              w-16 h-16
-              mx-auto
+              transition
+            "
+          >
 
-              rounded-2xl
+            <Phone
+              className="
+                mx-auto
+                text-blue-500
+              "
+              size={36}
+            />
 
-              bg-blue-500/10
+            <h3
+              className="
+                text-xl md:text-2xl
+                font-semibold
 
-              flex items-center justify-center
-            ">
-              <Phone
-                className="text-blue-500"
-                size={32}
-              />
-            </div>
+                mt-5 md:mt-6
 
-            <h3 className="
-              text-xl md:text-2xl
-              font-bold
-              mt-6
-            ">
+                text-slate-900
+                dark:text-white
+              "
+            >
               WhatsApp
             </h3>
 
-            <p className="
-              text-slate-600
-              mt-4
-              text-sm md:text-base
-            ">
+            <p
+              className="
+                text-slate-600
+                dark:text-slate-400
+
+                mt-3 md:mt-4
+
+                text-sm md:text-base
+              "
+            >
               +62 85213840489
             </p>
 
           </div>
 
           {/* INSTAGRAM */}
-          <div className="
-            p-6 md:p-8
+          <div
+            className="
+              p-6 md:p-8
 
-            rounded-2xl md:rounded-3xl
+              rounded-2xl md:rounded-3xl
 
-            bg-white/80
-            backdrop-blur-xl
+              bg-white/80
+              dark:bg-[#111827]
 
-            border border-slate-200
+              backdrop-blur-xl
 
-            shadow-xl
-            shadow-slate-200/40
+              border border-slate-200
+              dark:border-white/10
 
-            text-center
+              shadow-xl
+              shadow-slate-200/40
+              dark:shadow-black/20
 
-            hover:-translate-y-2
-            hover:border-blue-400/30
-            hover:shadow-2xl
-            hover:shadow-blue-100/40
+              text-center
 
-            transition
+              hover:border-blue-500/30
+              hover:-translate-y-1
 
-            sm:col-span-2
-            md:col-span-1
-          ">
+              transition
 
-            <div className="
-              w-16 h-16
-              mx-auto
+              sm:col-span-2
+              md:col-span-1
+            "
+          >
 
-              rounded-2xl
+            <Image
+              className="
+                mx-auto
+                text-blue-500
+              "
+              size={36}
+            />
 
-              bg-blue-500/10
+            <h3
+              className="
+                text-xl md:text-2xl
+                font-semibold
 
-              flex items-center justify-center
-            ">
-              <Image
-                className="text-blue-500"
-                size={32}
-              />
-            </div>
+                mt-5 md:mt-6
 
-            <h3 className="
-              text-xl md:text-2xl
-              font-bold
-              mt-6
-            ">
+                text-slate-900
+                dark:text-white
+              "
+            >
               Instagram
             </h3>
 
-            <p className="
-              text-slate-600
-              mt-4
-              text-sm md:text-base
-            ">
+            <p
+              className="
+                text-slate-600
+                dark:text-slate-400
+
+                mt-3 md:mt-4
+
+                text-sm md:text-base
+              "
+            >
               @nux.space
             </p>
 
@@ -277,6 +270,7 @@ export default function Contact() {
         </div>
 
       </div>
+
     </section>
   );
 }

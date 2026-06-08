@@ -6,7 +6,11 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 md:py-32 overflow-hidden"
+      className="
+        relative
+        py-20 md:py-32
+        overflow-hidden
+      "
     >
 
       {/* GLOW */}
@@ -15,7 +19,7 @@ export default function About() {
         w-[250px] md:w-[400px]
         h-[250px] md:h-[400px]
 
-        bg-blue-400/10
+        bg-blue-500/10
         blur-3xl
         rounded-full
       " />
@@ -25,12 +29,17 @@ export default function About() {
         w-[300px] md:w-[500px]
         h-[300px] md:h-[500px]
 
-        bg-indigo-400/10
+        bg-indigo-500/10
         blur-3xl
         rounded-full
       " />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="
+        max-w-7xl
+        mx-auto
+        px-4 sm:px-6
+        relative z-10
+      ">
 
         {/* TITLE */}
         <div className="text-center">
@@ -38,7 +47,9 @@ export default function About() {
           <span className="
             text-blue-500
             font-semibold
+
             tracking-[0.2em] md:tracking-[0.3em]
+
             uppercase
             text-sm md:text-base
           ">
@@ -47,10 +58,17 @@ export default function About() {
 
           <h2 className="
             mt-4 md:mt-6
-            text-3xl sm:text-4xl md:text-6xl
+
+            text-3xl
+            sm:text-4xl
+            md:text-6xl
+
             font-black
             tracking-tight
             leading-tight
+
+            text-slate-900
+            dark:text-white
           ">
             Creating Digital
 
@@ -68,6 +86,7 @@ export default function About() {
             <br />
 
             Beyond Expectations
+
           </h2>
 
         </div>
@@ -76,6 +95,7 @@ export default function About() {
         <div className="
           grid grid-cols-1 lg:grid-cols-2
           gap-10 md:gap-16
+
           mt-16 md:mt-24
           items-center
         ">
@@ -92,7 +112,7 @@ export default function About() {
             {/* OUTER GLOW */}
             <div className="
               absolute inset-0
-              bg-blue-400/10
+              bg-blue-500/20
               blur-3xl
               rounded-full
             " />
@@ -102,15 +122,20 @@ export default function About() {
               relative
 
               bg-white/80
+              dark:bg-white/5
+
               backdrop-blur-2xl
 
               border border-slate-200
+              dark:border-white/10
 
               rounded-[24px] md:rounded-[40px]
 
               p-3 md:p-5
 
-              shadow-2xl shadow-slate-200/50
+              shadow-2xl
+              shadow-slate-200/40
+              dark:shadow-black/20
             ">
 
               <img
@@ -135,26 +160,37 @@ export default function About() {
                 md:bottom-10 md:left-10
 
                 bg-white/80
+                dark:bg-[#0f172a]/80
+
                 backdrop-blur-xl
 
                 border border-slate-200
+                dark:border-white/10
 
                 rounded-2xl md:rounded-3xl
 
                 p-3 md:p-6
 
-                shadow-xl shadow-slate-200/40
+                shadow-xl
               ">
 
-                <p className="text-slate-500 text-xs md:text-sm">
+                <p className="
+                  text-slate-500
+                  dark:text-slate-400
+
+                  text-xs md:text-sm
+                ">
                   Creative Developer
                 </p>
 
                 <h3 className="
                   mt-1 md:mt-2
+
                   text-lg md:text-2xl
                   font-bold
+
                   text-slate-900
+                  dark:text-white
                 ">
                   Modern Vision
                 </h3>
@@ -162,6 +198,7 @@ export default function About() {
               </div>
 
             </div>
+
           </motion.div>
 
           {/* TEXT SIDE */}
@@ -175,36 +212,39 @@ export default function About() {
 
             <p className="
               text-slate-600
+              dark:text-slate-400
+
               text-base md:text-lg
               leading-relaxed
             ">
               Nux Space is a creative digital agency focused on
-              Web Development and Graphic Design.
-              The name “Nux” stands for “New Experience,”
-              representing our vision to create modern,
-              innovative, and memorable digital experiences.
+              Web Development and Graphic Design. The name “Nux”
+              stands for “New Experience,” representing our vision
+              to create modern, innovative, and memorable digital experiences.
             </p>
 
             <p className="
               mt-6 md:mt-8
+
               text-slate-600
+              dark:text-slate-400
+
               text-base md:text-lg
               leading-relaxed
             ">
-              We believe great design is more than visuals
-              it’s about creating meaningful connections
-              between brands and people. Through creativity,
-              strategy, and technology, we help businesses
-              grow in the digital era.
+              We believe great design is more than visuals it’s about
+              creating meaningful connections between brands and people.
+              Through creativity, strategy, and technology,
+              we help businesses grow in the digital era.
             </p>
 
             {/* FEATURES */}
             <div className="
-              grid grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-3
+              grid
+              grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
 
               gap-4 md:gap-6
+
               mt-10 md:mt-14
             ">
 
@@ -215,16 +255,18 @@ export default function About() {
                 rounded-2xl md:rounded-3xl
 
                 bg-white/80
+                dark:bg-white/5
+
                 backdrop-blur-xl
 
                 border border-slate-200
+                dark:border-white/10
 
-                shadow-xl shadow-slate-200/30
+                shadow-xl
+                shadow-slate-200/40
+                dark:shadow-black/20
 
-                hover:border-blue-400/30
-                hover:shadow-2xl
-                hover:shadow-blue-100/40
-                hover:-translate-y-1
+                hover:border-blue-500/30
 
                 transition
               ">
@@ -236,15 +278,22 @@ export default function About() {
 
                 <h3 className="
                   mt-4
+
                   font-bold
                   text-lg md:text-xl
+
+                  text-slate-900
+                  dark:text-white
                 ">
                   Creative
                 </h3>
 
                 <p className="
                   mt-2
+
                   text-slate-600
+                  dark:text-slate-400
+
                   text-xs md:text-sm
                 ">
                   Futuristic and premium visual experience.
@@ -259,16 +308,18 @@ export default function About() {
                 rounded-2xl md:rounded-3xl
 
                 bg-white/80
+                dark:bg-white/5
+
                 backdrop-blur-xl
 
                 border border-slate-200
+                dark:border-white/10
 
-                shadow-xl shadow-slate-200/30
+                shadow-xl
+                shadow-slate-200/40
+                dark:shadow-black/20
 
-                hover:border-blue-400/30
-                hover:shadow-2xl
-                hover:shadow-blue-100/40
-                hover:-translate-y-1
+                hover:border-blue-500/30
 
                 transition
               ">
@@ -280,15 +331,22 @@ export default function About() {
 
                 <h3 className="
                   mt-4
+
                   font-bold
                   text-lg md:text-xl
+
+                  text-slate-900
+                  dark:text-white
                 ">
                   Fast
                 </h3>
 
                 <p className="
                   mt-2
+
                   text-slate-600
+                  dark:text-slate-400
+
                   text-xs md:text-sm
                 ">
                   Optimized modern website performance.
@@ -303,21 +361,22 @@ export default function About() {
                 rounded-2xl md:rounded-3xl
 
                 bg-white/80
+                dark:bg-white/5
+
                 backdrop-blur-xl
 
                 border border-slate-200
+                dark:border-white/10
 
-                shadow-xl shadow-slate-200/30
+                shadow-xl
+                shadow-slate-200/40
+                dark:shadow-black/20
 
-                hover:border-blue-400/30
-                hover:shadow-2xl
-                hover:shadow-blue-100/40
-                hover:-translate-y-1
+                hover:border-blue-500/30
 
                 transition
 
-                sm:col-span-2
-                lg:col-span-1
+                sm:col-span-2 lg:col-span-1
               ">
 
                 <Globe
@@ -327,15 +386,22 @@ export default function About() {
 
                 <h3 className="
                   mt-4
+
                   font-bold
                   text-lg md:text-xl
+
+                  text-slate-900
+                  dark:text-white
                 ">
                   Global
                 </h3>
 
                 <p className="
                   mt-2
+
                   text-slate-600
+                  dark:text-slate-400
+
                   text-xs md:text-sm
                 ">
                   Ready for startup and international brands.

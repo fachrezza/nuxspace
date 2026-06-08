@@ -13,28 +13,10 @@ export default function Hero() {
         min-h-screen
         flex items-center
         overflow-hidden
-        
+        pt-32
       "
     >
 
-      {/* GLOW */}
-      <div className="
-        absolute top-[-150px] left-[-100px]
-        w-[350px] h-[350px]
-        bg-blue-400/10
-        blur-3xl
-        rounded-full
-      " />
-
-      <div className="
-        absolute bottom-[-150px] right-[-100px]
-        w-[400px] h-[400px]
-        bg-indigo-400/10
-        blur-3xl
-        rounded-full
-      " />
-
-      {/* GRID */}
       <div className="
         max-w-7xl
         mx-auto
@@ -42,8 +24,8 @@ export default function Hero() {
 
         grid lg:grid-cols-2
         gap-20
-        items-center
 
+        items-center
         relative z-10
       ">
 
@@ -68,11 +50,16 @@ export default function Hero() {
                 rounded-full
 
                 bg-white/80
+                dark:bg-white/5
+
                 backdrop-blur-xl
 
                 border border-slate-200
+                dark:border-white/10
 
-                shadow-lg shadow-slate-200/40
+                shadow-lg
+                shadow-slate-200/40
+                dark:shadow-black/20
               "
             >
 
@@ -84,7 +71,9 @@ export default function Hero() {
               <span className="
                 text-sm
                 font-semibold
+
                 text-slate-700
+                dark:text-slate-300
               ">
                 Futuristic Digital Agency
               </span>
@@ -96,7 +85,7 @@ export default function Hero() {
               className="
                 mt-10
 
-                text-4xl
+                text-3xl
                 md:text-6xl
 
                 font-black
@@ -105,6 +94,7 @@ export default function Hero() {
                 tracking-tight
 
                 text-slate-900
+                dark:text-white
               "
             >
               Build Your
@@ -136,13 +126,13 @@ export default function Hero() {
               leading-relaxed
 
               text-slate-600
+              dark:text-slate-400
 
               max-w-xl
             ">
               Nux Space delivers modern websites
               and creative visual designs to help brands,
-              businesses, and creators stand out
-              in the digital world.
+              businesses, and creators stand out in the digital world.
             </p>
 
             {/* BUTTON */}
@@ -152,7 +142,6 @@ export default function Hero() {
               mt-10
             ">
 
-              {/* PRIMARY */}
               <a
                 href="#portfolio"
                 className="
@@ -173,11 +162,12 @@ export default function Hero() {
 
                   hover:scale-105
                   hover:shadow-2xl
-                  hover:shadow-blue-300/40
+                  hover:shadow-indigo-400/40
 
                   transition
                 "
               >
+
                 Explore Work
 
                 <ArrowRight
@@ -187,9 +177,9 @@ export default function Hero() {
                     transition
                   "
                 />
+
               </a>
 
-              {/* SECONDARY */}
               <a
                 href="#catalog"
                 className="
@@ -198,18 +188,20 @@ export default function Hero() {
                   rounded-2xl
 
                   bg-white/80
+                  dark:bg-white/5
+
                   backdrop-blur-xl
 
                   border border-slate-200
+                  dark:border-white/10
 
                   text-slate-700
+                  dark:text-white
+
                   font-semibold
 
-                  shadow-lg shadow-slate-200/30
-
-                  hover:bg-white
-                  hover:shadow-xl
-                  hover:-translate-y-1
+                  hover:bg-slate-100
+                  dark:hover:bg-white/10
 
                   transition
                 "
@@ -242,37 +234,51 @@ export default function Hero() {
 
             {/* Glow */}
             <div className="
-              absolute -top-10 -left-10
+              absolute
+              -top-10 -left-10
+
               w-72 h-72
-              bg-blue-400/10
+
+              bg-blue-500/20
               blur-3xl
+
               rounded-full
             " />
 
             <div className="
-              absolute -bottom-10 -right-10
+              absolute
+              -bottom-10 -right-10
+
               w-72 h-72
-              bg-indigo-400/10
+
+              bg-indigo-500/20
               blur-3xl
+
               rounded-full
             " />
 
             {/* Card */}
-            <div className="
-              relative
+            <div
+              className="
+                relative
 
-              bg-white/80
-              backdrop-blur-2xl
+                bg-white/80
+                dark:bg-white/5
 
-              border border-slate-200
+                backdrop-blur-2xl
 
-              rounded-3xl
+                border border-slate-200
+                dark:border-white/10
 
-              p-6
+                rounded-3xl
 
-              shadow-2xl
-              shadow-slate-200/50
-            ">
+                p-6
+
+                shadow-2xl
+                shadow-slate-200/40
+                dark:shadow-black/20
+              "
+            >
 
               {/* Header */}
               <div className="mb-6">
@@ -287,6 +293,8 @@ export default function Hero() {
 
                 <p className="
                   text-slate-500
+                  dark:text-slate-400
+
                   text-sm
                   mt-1
                 ">
@@ -298,7 +306,7 @@ export default function Hero() {
               {/* Steps */}
               <div className="space-y-4">
 
-                {/* STEP 1 */}
+                {/* 1 */}
                 <div className="flex gap-3">
 
                   <span className="
@@ -308,7 +316,8 @@ export default function Hero() {
 
                     rounded-full
 
-                    bg-blue-500/10
+                    bg-blue-500/20
+
                     text-blue-500
 
                     text-sm
@@ -321,6 +330,8 @@ export default function Hero() {
 
                     <p className="
                       text-slate-900
+                      dark:text-white
+
                       font-semibold
                       text-sm
                     ">
@@ -329,6 +340,8 @@ export default function Hero() {
 
                     <p className="
                       text-slate-500
+                      dark:text-slate-400
+
                       text-xs
                     ">
                       Understanding your needs and goals
@@ -338,7 +351,7 @@ export default function Hero() {
 
                 </div>
 
-                {/* STEP 2 */}
+                {/* 2 */}
                 <div className="flex gap-3">
 
                   <span className="
@@ -348,7 +361,8 @@ export default function Hero() {
 
                     rounded-full
 
-                    bg-indigo-500/10
+                    bg-indigo-500/20
+
                     text-indigo-500
 
                     text-sm
@@ -361,6 +375,8 @@ export default function Hero() {
 
                     <p className="
                       text-slate-900
+                      dark:text-white
+
                       font-semibold
                       text-sm
                     ">
@@ -369,6 +385,8 @@ export default function Hero() {
 
                     <p className="
                       text-slate-500
+                      dark:text-slate-400
+
                       text-xs
                     ">
                       Crafting modern UI and clean code
@@ -378,7 +396,7 @@ export default function Hero() {
 
                 </div>
 
-                {/* STEP 3 */}
+                {/* 3 */}
                 <div className="flex gap-3">
 
                   <span className="
@@ -388,7 +406,8 @@ export default function Hero() {
 
                     rounded-full
 
-                    bg-purple-500/10
+                    bg-purple-500/20
+
                     text-purple-500
 
                     text-sm
@@ -401,6 +420,8 @@ export default function Hero() {
 
                     <p className="
                       text-slate-900
+                      dark:text-white
+
                       font-semibold
                       text-sm
                     ">
@@ -409,6 +430,8 @@ export default function Hero() {
 
                     <p className="
                       text-slate-500
+                      dark:text-slate-400
+
                       text-xs
                     ">
                       Deploy and optimize for performance
@@ -420,24 +443,28 @@ export default function Hero() {
 
               </div>
 
-              {/* Bottom Value */}
-              <div className="
-                mt-6
+              {/* Bottom */}
+              <div
+                className="
+                  mt-6
+                  p-4
 
-                p-4
+                  rounded-2xl
 
-                rounded-2xl
+                  bg-gradient-to-r
+                  from-blue-500/10
+                  to-indigo-500/10
 
-                bg-gradient-to-r
-                from-blue-50
-                to-indigo-50
-
-                border border-slate-200
-              ">
+                  border border-slate-200
+                  dark:border-white/10
+                "
+              >
 
                 <p className="
                   text-sm
+
                   text-slate-600
+                  dark:text-slate-300
                 ">
                   We help startups and small businesses
                   build a strong digital presence from zero.
@@ -452,6 +479,7 @@ export default function Hero() {
         </div>
 
       </div>
+
     </section>
   );
 }
