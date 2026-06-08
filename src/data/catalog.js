@@ -16,7 +16,7 @@ const catalog = {
           "Basic animation UI",
         ],
 
-        price: "Start from IDR 500K",
+        price: "Start from IDR 300K",
       },
 
       {
@@ -32,7 +32,7 @@ const catalog = {
           "Mobile responsive",
         ],
 
-        price: "Start from IDR 300K",
+        price: "Start from IDR 500K",
       },
 
       {
@@ -96,7 +96,7 @@ const catalog = {
           "Admin dashboard",
         ],
 
-        price: "Start from IDR 1.5JT",
+        price: "Start from IDR 3JT",
       },
 
       {
@@ -128,7 +128,7 @@ const catalog = {
           "Admin panel",
         ],
 
-        price: "Start from IDR 900K",
+        price: "Start from IDR 1JT",
       },
     ],
   },
