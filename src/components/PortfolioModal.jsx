@@ -40,7 +40,7 @@ export default function PortfolioModal({
             w-12 h-12
             rounded-2xl
             bg-white/10
-            hover:bg-blue-400
+            hover:bg-blue-500
             transition
             flex items-center justify-center
           "
@@ -51,7 +51,7 @@ export default function PortfolioModal({
         <div className="grid lg:grid-cols-2">
           {/* LEFT */}
           <div className="p-12 flex flex-col justify-center">
-            <span className="text-blue-400 font-semibold tracking-widest uppercase">
+            <span className="text-blue-500 font-semibold tracking-widest uppercase">
               {project.category}
             </span>
 
@@ -73,7 +73,7 @@ export default function PortfolioModal({
                     rounded-2xl
                     bg-white/5
                     border border-white/10
-                    text-blue-400
+                    text-blue-500
                     font-semibold
                   "
                 >
@@ -119,7 +119,7 @@ export default function PortfolioModal({
           {/* RIGHT */}
           <div className="relative">
             {/* GLOW */}
-            <div className="absolute inset-0 bg-blue-400/10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-blue-500/10 blur-3xl"></div>
 
             <img
               src={project.mockup}
