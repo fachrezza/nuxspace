@@ -5,11 +5,15 @@ html {
 }
 
 body {
-  background: #060816;
-  color: #f8fafc;
+  background: #f8fafc;
+  color: #0f172a;
   font-family: sans-serif;
-  overflow-x: hidden; /* penting */
+  overflow-x: hidden;
   position: relative;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* SCROLLBAR */
@@ -18,7 +22,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #060816;
+  background: #e2e8f0;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -32,7 +36,15 @@ body {
   color: white;
 }
 
-/* OPTIONAL: ambient glow tambahan (halus global) */
+/* GLOBAL TRANSITION */
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* AMBIENT GLOW */
 body::before,
 body::after {
   content: "";
@@ -42,19 +54,19 @@ body::after {
   height: 600px;
   transform: translateY(-50%);
   filter: blur(140px);
-  opacity: 0.25;
+  opacity: 0.1;
   z-index: -1;
   pointer-events: none;
 }
 
-/* LEFT GLOW (BLUE) */
+/* LEFT GLOW */
 body::before {
   left: -250px;
   background: radial-gradient(circle, #38bdf8, transparent 60%);
 }
 
-/* RIGHT GLOW (INDIGO) */
+/* RIGHT GLOW */
 body::after {
   right: -250px;
-  background: radial-gradient(circle, #6366f1, transparent 60%);
+  background: radial-gradient(circle, #818cf8, transparent 60%);
 }

@@ -5,7 +5,7 @@ import HeroImage from "../assets/FullMockup.png";
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-[#060816] text-white min-h-screen overflow-x-hidden">
+    <main className="bg-[#F8FAFC] text-slate-900 min-h-screen overflow-x-hidden">
 
       <Navbar />
 
@@ -13,7 +13,7 @@ export default function PortfolioPage() {
       <section className="pt-28 md:pt-40 pb-16 md:pb-24 relative overflow-hidden">
 
         {/* GLOW */}
-        <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-500/10 blur-3xl rounded-full" />
+        <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-400/10 blur-3xl rounded-full" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
@@ -30,7 +30,7 @@ export default function PortfolioPage() {
             Digital Experience
           </h1>
 
-          <p className="mt-6 md:mt-8 text-slate-400 max-w-2xl text-sm md:text-lg leading-relaxed">
+          <p className="mt-6 md:mt-8 text-slate-600 max-w-2xl text-sm md:text-lg leading-relaxed">
             NuxSpace is currently crafting modern website experiences, futuristic interfaces, and premium digital branding for upcoming projects.
           </p>
 
@@ -45,7 +45,19 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
 
             {/* MAIN CARD */}
-            <div className="lg:col-span-2 relative overflow-hidden rounded-2xl md:rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl min-h-[350px] md:min-h-[500px]">
+            <div className="
+              lg:col-span-2
+              relative overflow-hidden
+              rounded-2xl md:rounded-[40px]
+
+              border border-slate-200
+              bg-white/80
+              backdrop-blur-2xl
+
+              shadow-2xl shadow-slate-200/50
+
+              min-h-[350px] md:min-h-[500px]
+            ">
 
               <img
                 src={HeroImage}
@@ -53,16 +65,16 @@ export default function PortfolioPage() {
                 className="absolute inset-0 w-full h-full object-cover opacity-40"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-indigo-950 via-blue-900/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-blue-900/10 to-transparent" />
 
-              <div className="relative z-10 p-6 md:p-12 flex flex-col justify-end h-full">
+              <div className="relative z-10 p-6 md:p-12 flex flex-col justify-end h-full text-white">
 
                 <h2 className="text-2xl md:text-5xl font-black leading-tight">
                   Futuristic Digital <br />
                   Landing Experience
                 </h2>
 
-                <p className="mt-4 md:mt-6 text-slate-300 max-w-2xl text-sm md:text-lg leading-relaxed">
+                <p className="mt-4 md:mt-6 text-slate-200 max-w-2xl text-sm md:text-lg leading-relaxed">
                   Creating futuristic websites, modern branding, and immersive user experiences with clean design and premium technology.
                 </p>
 
@@ -70,7 +82,16 @@ export default function PortfolioPage() {
                   {["React", "UI/UX", "Motion"].map((item, index) => (
                     <div
                       key={index}
-                      className="px-3 md:px-5 py-2 md:py-3 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 text-slate-300 text-xs md:text-base"
+                      className="
+                        px-3 md:px-5 py-2 md:py-3
+                        rounded-xl md:rounded-2xl
+
+                        bg-white/20
+                        border border-white/20
+
+                        text-white
+                        text-xs md:text-base
+                      "
                     >
                       {item}
                     </div>
@@ -84,11 +105,25 @@ export default function PortfolioPage() {
             <div className="space-y-6 md:space-y-8">
 
               {/* CARD 1 */}
-              <div className="relative overflow-hidden rounded-2xl md:rounded-[32px] border border-dashed border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-10 h-[200px] md:h-[235px] flex flex-col justify-center">
+              <div className="
+                relative overflow-hidden
+                rounded-2xl md:rounded-[32px]
 
-                <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-blue-500/10 blur-3xl rounded-full" />
+                border border-slate-200
+                bg-white/80
+                backdrop-blur-xl
 
-                <span className="text-blue-400 text-xs md:text-sm font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
+                shadow-xl shadow-slate-200/40
+
+                p-6 md:p-10
+                h-[200px] md:h-[235px]
+
+                flex flex-col justify-center
+              ">
+
+                <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-blue-400/10 blur-3xl rounded-full" />
+
+                <span className="text-blue-500 text-xs md:text-sm font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
                   Upcoming
                 </span>
 
@@ -96,18 +131,33 @@ export default function PortfolioPage() {
                   Next Launch
                 </h3>
 
-                <p className="mt-2 md:mt-4 text-slate-400 text-sm md:text-base leading-relaxed">
+                <p className="mt-2 md:mt-4 text-slate-600 text-sm md:text-base leading-relaxed">
                   New creative project currently under development.
                 </p>
 
               </div>
 
               {/* CARD 2 */}
-              <div className="relative overflow-hidden rounded-2xl md:rounded-[32px] border border-dashed border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-10 h-[200px] md:h-[235px] flex flex-col justify-center">
+              <div className="
+                relative overflow-hidden
+                rounded-2xl md:rounded-[32px]
+
+                border border-slate-200
+                bg-white/80
+                backdrop-blur-xl
+
+                shadow-xl shadow-slate-200/40
+
+                p-6 md:p-10
+                h-[200px] md:h-[235px]
+
+                flex flex-col justify-center
+              ">
 
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-blue-500 animate-pulse"></div>
-                  <span className="text-slate-400 text-xs md:text-sm">
+
+                  <span className="text-slate-500 text-xs md:text-sm">
                     In Progress
                   </span>
                 </div>
@@ -116,7 +166,7 @@ export default function PortfolioPage() {
                   Future Experience
                 </h3>
 
-                <p className="mt-2 md:mt-4 text-slate-400 text-sm md:text-base leading-relaxed">
+                <p className="mt-2 md:mt-4 text-slate-600 text-sm md:text-base leading-relaxed">
                   Experimental UI concepts and futuristic digital interfaces.
                 </p>
 
@@ -126,9 +176,21 @@ export default function PortfolioPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 md:mt-20 rounded-2xl md:rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 md:p-12 text-center">
+          <div className="
+            mt-16 md:mt-20
+            rounded-2xl md:rounded-[40px]
 
-            <span className="text-blue-400 font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase text-sm md:text-base">
+            border border-slate-200
+            bg-white/80
+            backdrop-blur-2xl
+
+            shadow-2xl shadow-slate-200/40
+
+            p-8 md:p-12
+            text-center
+          ">
+
+            <span className="text-blue-500 font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase text-sm md:text-base">
               Start With NuxSpace
             </span>
 
@@ -137,14 +199,28 @@ export default function PortfolioPage() {
               <span className="text-blue-500"> Extraordinary</span>
             </h2>
 
-            <p className="mt-4 md:mt-6 text-slate-400 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed">
+            <p className="mt-4 md:mt-6 text-slate-600 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed">
               We are ready to help startups, personal brands, and businesses create futuristic digital experiences.
             </p>
 
             <HashLink
               smooth
               to="/#contact"
-              className="inline-flex mt-6 md:mt-10 px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl bg-blue-500 font-semibold hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 transition text-sm md:text-base"
+              className="
+                inline-flex mt-6 md:mt-10
+                px-6 md:px-8 py-3 md:py-4
+                rounded-xl md:rounded-2xl
+
+                bg-blue-500
+                text-white
+                font-semibold
+
+                hover:scale-105
+                hover:shadow-2xl
+                hover:shadow-blue-300/40
+
+                transition
+              "
             >
               Start a Project
             </HashLink>
