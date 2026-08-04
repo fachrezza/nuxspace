@@ -28,26 +28,27 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
+      aria-label="Toggle theme"
       className="
-        w-11 h-11
+        w-10 h-10
         rounded-xl
 
-        bg-slate-100
-        dark:bg-white/10
-
-        border border-slate-200
+        border border-black/10
         dark:border-white/10
 
         flex items-center justify-center
 
-        text-slate-700
-        dark:text-white
+        text-[#0A0A0A]
+        dark:text-[#FAFAFA]
 
-        hover:scale-105
+        hover:border-[#2563EB]
+        hover:text-[#2563EB]
+        hover:shadow-[0_0_16px_-4px_rgba(37,99,235,0.5)]
+
         transition
       "
     >
-      {dark ? <Sun size={18} /> : <Moon size={18} />}
+      {dark ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   );
 }

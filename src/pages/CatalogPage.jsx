@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import catalog from "../data/catalog";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Plus } from "lucide-react";
 
 export default function CatalogPage() {
   const { category } = useParams();
@@ -16,11 +17,13 @@ export default function CatalogPage() {
 
           flex items-center justify-center
 
-          bg-[#f8fafc]
-          dark:bg-[#060816]
+          bg-[#FAFAFA]
+          dark:bg-[#0A0A0A]
 
-          text-slate-900
-          dark:text-white
+          text-[#0A0A0A]
+          dark:text-[#FAFAFA]
+
+          font-body
         "
       >
         Category not found
@@ -31,11 +34,13 @@ export default function CatalogPage() {
   return (
     <main
       className="
-        bg-[#f8fafc]
-        dark:bg-[#060816]
+        bg-[#FAFAFA]
+        dark:bg-[#0A0A0A]
 
-        text-slate-900
-        dark:text-white
+        text-[#0A0A0A]
+        dark:text-[#FAFAFA]
+
+        font-body
 
         min-h-screen
 
@@ -48,26 +53,6 @@ export default function CatalogPage() {
       {/* NAVBAR */}
       <Navbar />
 
-      {/* GLOW */}
-      <div
-        className="
-          fixed
-          top-[-100px]
-          left-[-100px]
-
-          w-[300px]
-          h-[300px]
-
-          bg-blue-500/10
-
-          blur-3xl
-          rounded-full
-
-          pointer-events-none
-          -z-10
-        "
-      />
-
       <div
         className="
           max-w-7xl
@@ -78,31 +63,40 @@ export default function CatalogPage() {
       >
 
         {/* TITLE */}
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
 
           <span
             className="
-              text-blue-500
+              flex items-center gap-2
+
+              font-mono
+              text-[#2563EB]
 
               uppercase
               tracking-[0.3em]
 
-              text-sm
+              text-xs
               font-semibold
             "
           >
+            <Plus size={12} strokeWidth={3} />
             Service Category
           </span>
 
           <h1
             className="
-              mt-5
+              mt-4
 
+              font-display
               text-4xl md:text-5xl
-              font-black
+              font-bold
 
-              text-slate-900
-              dark:text-white
+              text-[#0A0A0A]
+              dark:text-[#FAFAFA]
             "
           >
             {data.title}
@@ -112,11 +106,10 @@ export default function CatalogPage() {
             className="
               mt-6
 
-              text-slate-600
-              dark:text-slate-400
+              text-[#0A0A0A]/60
+              dark:text-[#FAFAFA]/60
 
               max-w-2xl
-              mx-auto
 
               leading-relaxed
             "
@@ -125,55 +118,57 @@ export default function CatalogPage() {
             transparent pricing and complete feature lists.
           </p>
 
-        </div>
+        </motion.div>
 
         {/* ITEMS */}
         <div
           className="
             grid
             md:grid-cols-2
-
-            gap-8
+            gap-6
 
             mt-16
           "
         >
 
           {data.items.map((item, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (index % 2) * 0.08 }}
+              viewport={{ once: true, margin: "-80px" }}
               className="
                 p-8
 
-                rounded-[32px]
-
-                bg-white/80
-                dark:bg-white/5
+                bg-white/50
+                dark:bg-white/[0.04]
 
                 backdrop-blur-xl
 
-                border border-slate-200
+                border
+                border-white/60
                 dark:border-white/10
 
-                shadow-xl
-                shadow-slate-200/40
-                dark:shadow-black/20
+                rounded-3xl
 
-                hover:border-blue-500/30
+                hover:border-[#2563EB]/40
                 hover:-translate-y-1
+                hover:shadow-[0_20px_50px_-20px_rgba(37,99,235,0.45)]
 
-                transition
+                transition-all duration-300
               "
             >
 
               {/* TITLE */}
               <h2
                 className="
+                  font-display
                   text-2xl
                   font-bold
 
-                  text-slate-900
-                  dark:text-white
+                  text-[#0A0A0A]
+                  dark:text-[#FAFAFA]
                 "
               >
                 {item.name}
@@ -184,8 +179,8 @@ export default function CatalogPage() {
                 className="
                   mt-4
 
-                  text-slate-600
-                  dark:text-slate-400
+                  text-[#0A0A0A]/60
+                  dark:text-[#FAFAFA]/60
 
                   leading-relaxed
                 "
@@ -198,11 +193,16 @@ export default function CatalogPage() {
 
                 <p
                   className="
-                    text-blue-500
+                    font-mono
+                    text-xs
+                    uppercase
+                    tracking-widest
+
+                    text-[#2563EB]
                     font-semibold
                   "
                 >
-                  What you get:
+                  What you get
                 </p>
 
                 <ul
@@ -210,8 +210,8 @@ export default function CatalogPage() {
                     mt-4
                     space-y-3
 
-                    text-slate-700
-                    dark:text-slate-300
+                    text-[#0A0A0A]/80
+                    dark:text-[#FAFAFA]/80
                   "
                 >
 
@@ -226,14 +226,12 @@ export default function CatalogPage() {
 
                       <span
                         className="
-                          mt-1
+                          mt-2
 
-                          w-2
-                          h-2
+                          w-1.5
+                          h-1.5
 
-                          rounded-full
-
-                          bg-blue-500
+                          bg-[#2563EB]
                         "
                       />
 
@@ -251,10 +249,11 @@ export default function CatalogPage() {
                 className="
                   mt-8
 
-                  text-blue-500
+                  font-mono
+                  text-[#2563EB]
 
                   font-bold
-                  text-2xl
+                  text-xl
                 "
               >
                 {item.price}
@@ -267,8 +266,8 @@ export default function CatalogPage() {
 
                   text-xs
 
-                  text-slate-500
-                  dark:text-slate-400
+                  text-[#0A0A0A]/50
+                  dark:text-[#FAFAFA]/50
                 "
               >
                 Interested? Contact us directly on WhatsApp.
@@ -290,18 +289,21 @@ export default function CatalogPage() {
 
                   px-6 py-4
 
-                  rounded-2xl
+                  rounded-xl
 
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500
+                  bg-[#0A0A0A]
+                  dark:bg-[#FAFAFA]
 
-                  text-white
+                  text-[#FAFAFA]
+                  dark:text-[#0A0A0A]
+
                   font-semibold
 
-                  hover:scale-[1.02]
-                  hover:shadow-xl
-                  hover:shadow-blue-500/30
+                  hover:bg-[#2563EB]
+                  dark:hover:bg-[#2563EB]
+                  dark:hover:text-white
+
+                  hover:shadow-[0_0_28px_-6px_rgba(37,99,235,0.6)]
 
                   transition
                 "
@@ -313,7 +315,7 @@ export default function CatalogPage() {
 
               </a>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>

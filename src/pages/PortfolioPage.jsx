@@ -1,17 +1,21 @@
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { HashLink } from "react-router-hash-link";
+import { Plus } from "lucide-react";
 import HeroImage from "../assets/FullMockup.png";
 
 export default function PortfolioPage() {
   return (
     <main
       className="
-        bg-[#f8fafc]
-        dark:bg-[#060816]
+        bg-[#FAFAFA]
+        dark:bg-[#0A0A0A]
 
-        text-slate-900
-        dark:text-white
+        text-[#0A0A0A]
+        dark:text-[#FAFAFA]
+
+        font-body
 
         min-h-screen
         overflow-x-hidden
@@ -33,23 +37,10 @@ export default function PortfolioPage() {
         "
       >
 
-        {/* GLOW */}
-        <div
-          className="
-            absolute
-            top-0 left-0
-
-            w-[300px] md:w-[500px]
-            h-[300px] md:h-[500px]
-
-            bg-blue-500/10
-
-            blur-3xl
-            rounded-full
-          "
-        />
-
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
           className="
             max-w-7xl
             mx-auto
@@ -62,16 +53,18 @@ export default function PortfolioPage() {
 
           <span
             className="
-              text-blue-500
+              flex items-center gap-2
 
-              font-semibold
+              font-mono
+              text-[#2563EB]
 
               tracking-[0.2em] md:tracking-[0.3em]
               uppercase
 
-              text-sm md:text-base
+              text-xs md:text-sm
             "
           >
+            <Plus size={12} strokeWidth={3} />
             Portfolio
           </span>
 
@@ -79,32 +72,22 @@ export default function PortfolioPage() {
             className="
               mt-4 md:mt-6
 
+              font-display
               text-3xl
               sm:text-5xl
               md:text-7xl
 
-              font-black
+              font-bold
               tracking-tight
-              leading-tight
+              leading-[1.05]
+
+              text-[#0A0A0A]
+              dark:text-[#FAFAFA]
             "
           >
             Building The
-
-            <span
-              className="
-                bg-gradient-to-r
-                from-blue-500
-                to-indigo-500
-
-                bg-clip-text
-                text-transparent
-              "
-            >
-              {" "}Future
-            </span>
-
+            <span className="text-[#2563EB]"> Future</span>
             <br />
-
             Digital Experience
           </h1>
 
@@ -112,8 +95,8 @@ export default function PortfolioPage() {
             className="
               mt-6 md:mt-8
 
-              text-slate-600
-              dark:text-slate-400
+              text-[#0A0A0A]/60
+              dark:text-[#FAFAFA]/60
 
               max-w-2xl
 
@@ -126,7 +109,7 @@ export default function PortfolioPage() {
             for upcoming projects.
           </p>
 
-        </div>
+        </motion.div>
 
       </section>
 
@@ -159,26 +142,29 @@ export default function PortfolioPage() {
           >
 
             {/* MAIN CARD */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className="
+                group
+
                 lg:col-span-2
 
                 relative
                 overflow-hidden
 
-                rounded-2xl md:rounded-[40px]
+                rounded-3xl
 
-                border border-slate-200
+                border
+                border-white/60
                 dark:border-white/10
 
-                bg-white/80
-                dark:bg-white/5
+                hover:border-[#2563EB]/50
+                hover:shadow-[0_24px_60px_-24px_rgba(37,99,235,0.5)]
 
-                backdrop-blur-2xl
-
-                shadow-xl
-                shadow-slate-200/40
-                dark:shadow-black/20
+                transition-all duration-300
 
                 min-h-[350px]
                 md:min-h-[500px]
@@ -195,6 +181,10 @@ export default function PortfolioPage() {
                   object-cover
 
                   opacity-40
+
+                  group-hover:scale-105
+
+                  transition-transform duration-700
                 "
               />
 
@@ -203,8 +193,8 @@ export default function PortfolioPage() {
                   absolute inset-0
 
                   bg-gradient-to-t
-                  from-slate-900/80
-                  via-blue-900/20
+                  from-black/80
+                  via-black/20
                   to-transparent
                 "
               />
@@ -224,8 +214,9 @@ export default function PortfolioPage() {
 
                 <h2
                   className="
+                    font-display
                     text-2xl md:text-5xl
-                    font-black
+                    font-bold
                     leading-tight
 
                     text-white
@@ -255,7 +246,7 @@ export default function PortfolioPage() {
                 <div
                   className="
                     flex flex-wrap
-                    gap-3 md:gap-4
+                    gap-3
 
                     mt-6 md:mt-10
                   "
@@ -265,23 +256,20 @@ export default function PortfolioPage() {
                     <div
                       key={index}
                       className="
-                        px-3 md:px-5
-                        py-2 md:py-3
+                        px-3 md:px-4
+                        py-2
 
-                        rounded-xl md:rounded-2xl
+                        rounded-full
 
-                        bg-white/70
-                        dark:bg-white/5
-
+                        bg-white/5
                         backdrop-blur-xl
 
-                        border border-slate-200
-                        dark:border-white/10
+                        border border-white/20
 
-                        text-slate-700
-                        dark:text-slate-300
+                        font-mono
+                        text-white/80
 
-                        text-xs md:text-base
+                        text-xs md:text-sm
                       "
                     >
                       {item}
@@ -292,31 +280,31 @@ export default function PortfolioPage() {
 
               </div>
 
-            </div>
+            </motion.div>
 
             {/* SIDE CARDS */}
             <div className="space-y-6 md:space-y-8">
 
               {/* CARD 1 */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
                 className="
                   relative
                   overflow-hidden
 
-                  rounded-2xl md:rounded-[32px]
-
-                  border border-dashed
-                  border-slate-300
-                  dark:border-white/10
-
-                  bg-white/80
-                  dark:bg-white/5
+                  bg-white/40
+                  dark:bg-white/[0.03]
 
                   backdrop-blur-xl
 
-                  shadow-xl
-                  shadow-slate-200/40
-                  dark:shadow-black/20
+                  rounded-3xl
+
+                  border border-dashed
+                  border-black/15
+                  dark:border-white/15
 
                   p-6 md:p-10
 
@@ -325,32 +313,22 @@ export default function PortfolioPage() {
 
                   flex flex-col
                   justify-center
+
+                  hover:border-[#2563EB]/50
+
+                  transition-colors duration-300
                 "
               >
 
-                <div
-                  className="
-                    absolute
-                    top-0 right-0
-
-                    w-24 md:w-32
-                    h-24 md:h-32
-
-                    bg-blue-500/10
-
-                    blur-3xl
-                    rounded-full
-                  "
-                />
-
                 <span
                   className="
-                    text-blue-500
+                    font-mono
+                    text-[#2563EB]
 
-                    text-xs md:text-sm
+                    text-xs
                     font-semibold
 
-                    tracking-[0.2em] md:tracking-[0.3em]
+                    tracking-[0.2em]
                     uppercase
                   "
                 >
@@ -361,11 +339,12 @@ export default function PortfolioPage() {
                   className="
                     mt-3 md:mt-5
 
+                    font-display
                     text-xl md:text-3xl
-                    font-black
+                    font-bold
 
-                    text-slate-900
-                    dark:text-white
+                    text-[#0A0A0A]
+                    dark:text-[#FAFAFA]
                   "
                 >
                   Next Launch
@@ -375,8 +354,8 @@ export default function PortfolioPage() {
                   className="
                     mt-2 md:mt-4
 
-                    text-slate-600
-                    dark:text-slate-400
+                    text-[#0A0A0A]/60
+                    dark:text-[#FAFAFA]/60
 
                     text-sm md:text-base
                     leading-relaxed
@@ -385,28 +364,28 @@ export default function PortfolioPage() {
                   New creative project currently under development.
                 </p>
 
-              </div>
+              </motion.div>
 
               {/* CARD 2 */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
                 className="
                   relative
                   overflow-hidden
 
-                  rounded-2xl md:rounded-[32px]
-
-                  border border-dashed
-                  border-slate-300
-                  dark:border-white/10
-
-                  bg-white/80
-                  dark:bg-white/5
+                  bg-white/40
+                  dark:bg-white/[0.03]
 
                   backdrop-blur-xl
 
-                  shadow-xl
-                  shadow-slate-200/40
-                  dark:shadow-black/20
+                  rounded-3xl
+
+                  border border-dashed
+                  border-black/15
+                  dark:border-white/15
 
                   p-6 md:p-10
 
@@ -415,34 +394,40 @@ export default function PortfolioPage() {
 
                   flex flex-col
                   justify-center
+
+                  hover:border-[#2563EB]/50
+
+                  transition-colors duration-300
                 "
               >
 
                 <div
                   className="
                     flex items-center
-                    gap-2 md:gap-3
+                    gap-2
                   "
                 >
 
                   <div
                     className="
-                      w-2 md:w-3
-                      h-2 md:h-3
+                      w-2 h-2
 
                       rounded-full
 
-                      bg-blue-500
+                      bg-[#2563EB]
                       animate-pulse
                     "
                   />
 
                   <span
                     className="
-                      text-slate-600
-                      dark:text-slate-400
+                      font-mono
+                      text-[#0A0A0A]/60
+                      dark:text-[#FAFAFA]/60
 
-                      text-xs md:text-sm
+                      text-xs
+                      uppercase
+                      tracking-wide
                     "
                   >
                     In Progress
@@ -454,11 +439,12 @@ export default function PortfolioPage() {
                   className="
                     mt-4 md:mt-6
 
+                    font-display
                     text-xl md:text-3xl
-                    font-black
+                    font-bold
 
-                    text-slate-900
-                    dark:text-white
+                    text-[#0A0A0A]
+                    dark:text-[#FAFAFA]
                   "
                 >
                   Future Experience
@@ -468,8 +454,8 @@ export default function PortfolioPage() {
                   className="
                     mt-2 md:mt-4
 
-                    text-slate-600
-                    dark:text-slate-400
+                    text-[#0A0A0A]/60
+                    dark:text-[#FAFAFA]/60
 
                     text-sm md:text-base
                     leading-relaxed
@@ -478,49 +464,54 @@ export default function PortfolioPage() {
                   Experimental UI concepts and futuristic digital interfaces.
                 </p>
 
-              </div>
+              </motion.div>
 
             </div>
 
           </div>
 
           {/* CTA */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             className="
               mt-16 md:mt-20
 
-              rounded-2xl md:rounded-[40px]
+              bg-white/40
+              dark:bg-white/[0.03]
 
-              border border-slate-200
+              backdrop-blur-xl
+
+              rounded-3xl
+
+              border
+              border-white/60
               dark:border-white/10
-
-              bg-white/80
-              dark:bg-white/5
-
-              backdrop-blur-2xl
-
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
 
               p-8 md:p-12
 
               text-center
+
+              shadow-[0_24px_60px_-28px_rgba(37,99,235,0.4)]
             "
           >
 
             <span
               className="
-                text-blue-500
+                flex items-center justify-center gap-2
 
-                font-semibold
+                font-mono
+                text-[#2563EB]
 
                 tracking-[0.2em] md:tracking-[0.3em]
                 uppercase
 
-                text-sm md:text-base
+                text-xs md:text-sm
               "
             >
+              <Plus size={12} strokeWidth={3} />
               Start With NuxSpace
             </span>
 
@@ -528,26 +519,24 @@ export default function PortfolioPage() {
               className="
                 mt-4 md:mt-6
 
+                font-display
                 text-2xl md:text-5xl
-                font-black
+                font-bold
 
-                text-slate-900
-                dark:text-white
+                text-[#0A0A0A]
+                dark:text-[#FAFAFA]
               "
             >
-              Let’s Build Something
-
-              <span className="text-blue-500">
-                {" "}Extraordinary
-              </span>
+              Let's Build Something
+              <span className="text-[#2563EB]"> Extraordinary</span>
             </h2>
 
             <p
               className="
                 mt-4 md:mt-6
 
-                text-slate-600
-                dark:text-slate-400
+                text-[#0A0A0A]/60
+                dark:text-[#FAFAFA]/60
 
                 max-w-2xl
                 mx-auto
@@ -571,18 +560,21 @@ export default function PortfolioPage() {
                 px-6 md:px-8
                 py-3 md:py-4
 
-                rounded-xl md:rounded-2xl
+                rounded-xl
 
-                bg-gradient-to-r
-                from-blue-500
-                to-indigo-500
+                bg-[#0A0A0A]
+                dark:bg-[#FAFAFA]
 
-                text-white
+                text-[#FAFAFA]
+                dark:text-[#0A0A0A]
+
                 font-semibold
 
-                hover:scale-105
-                hover:shadow-2xl
-                hover:shadow-blue-500/30
+                hover:bg-[#2563EB]
+                dark:hover:bg-[#2563EB]
+                dark:hover:text-white
+
+                hover:shadow-[0_0_28px_-6px_rgba(37,99,235,0.6)]
 
                 transition
 
@@ -592,7 +584,7 @@ export default function PortfolioPage() {
               Start a Project
             </HashLink>
 
-          </div>
+          </motion.div>
 
         </div>
 

@@ -11,11 +11,9 @@ export default function PortfolioCard({
         group
         relative
         overflow-hidden
-        rounded-[32px]
-        bg-white/5
-        backdrop-blur-xl
-        border border-white/10
-        hover:border-blue-500/30
+        rounded-md
+        border border-white/15
+        hover:border-[#2563EB]
         transition
       "
     >
@@ -28,7 +26,7 @@ export default function PortfolioCard({
             h-[350px]
             w-full
             object-cover
-            group-hover:scale-110
+            group-hover:scale-105
             transition duration-700
           "
         />
@@ -40,34 +38,34 @@ export default function PortfolioCard({
           absolute inset-0
           bg-gradient-to-t
           from-black/80
-          via-black/20
+          via-black/10
           to-transparent
         "
       ></div>
 
       {/* CONTENT */}
       <div className="absolute bottom-0 left-0 p-8 w-full">
-        <p className="text-blue-500 text-sm font-semibold">
+        <p className="font-mono text-xs uppercase tracking-widest text-[#5B9BFF]">
           {category}
         </p>
 
         <div className="flex items-center justify-between mt-3">
-          <h3 className="text-2xl font-bold">
+          <h3 className="font-display text-2xl font-bold text-white">
             {title}
           </h3>
 
           <button
             className="
               w-12 h-12
-              rounded-2xl
-              bg-white/10
-              backdrop-blur-xl
+              rounded-md
+              border border-white/20
               flex items-center justify-center
-              hover:bg-blue-500
+              hover:bg-[#2563EB]
+              hover:border-[#2563EB]
               transition
             "
           >
-            <ArrowUpRight size={22} />
+            <ArrowUpRight size={20} className="text-white" />
           </button>
         </div>
       </div>

@@ -1,4 +1,30 @@
-import { Mail, Phone, Image } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+
+const cards = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "nuxspaceid@gmail.com",
+    href: "mailto:nuxspaceid@gmail.com",
+    external: false,
+  },
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    value: "+62 85213840489",
+    href: "https://wa.me/6285213840489?text=Halo%20NuxSpace%2C%20saya%20tertarik%20dengan%20layanan%20Anda",
+    external: true,
+  },
+  {
+    icon: FaInstagram,
+    label: "Instagram",
+    value: "@nux.space",
+    href: "https://www.instagram.com/nux.space",
+    external: true,
+  },
+];
 
 export default function Contact() {
   return (
@@ -7,8 +33,9 @@ export default function Contact() {
       className="
         py-20 md:py-32
 
-        bg-slate-100/70
-        dark:bg-white/5
+        border-t
+        border-black/10
+        dark:border-white/10
 
         transition-colors duration-300
       "
@@ -24,6 +51,7 @@ export default function Contact() {
         {/* TITLE */}
         <h2
           className="
+            font-display
             text-3xl
             sm:text-4xl
             md:text-5xl
@@ -31,8 +59,8 @@ export default function Contact() {
             font-bold
             text-center
 
-            text-slate-900
-            dark:text-white
+            text-[#0A0A0A]
+            dark:text-[#FAFAFA]
           "
         >
           Contact Us
@@ -42,8 +70,8 @@ export default function Contact() {
           className="
             text-center
 
-            text-slate-600
-            dark:text-slate-400
+            text-[#0A0A0A]/60
+            dark:text-[#FAFAFA]/60
 
             mt-4 md:mt-5
 
@@ -60,212 +88,91 @@ export default function Contact() {
             grid-cols-1
             sm:grid-cols-2
             md:grid-cols-3
-
-            gap-6 md:gap-8
+            gap-4
 
             mt-12 md:mt-20
           "
         >
 
-          {/* EMAIL */}
-          <div
-            className="
-              p-6 md:p-8
-
-              rounded-2xl md:rounded-3xl
-
-              bg-white/80
-              dark:bg-[#111827]
-
-              backdrop-blur-xl
-
-              border border-slate-200
-              dark:border-white/10
-
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
-
-              text-center
-
-              hover:border-blue-500/30
-              hover:-translate-y-1
-
-              transition
-            "
-          >
-
-            <Mail
+          {cards.map(({ icon: Icon, label, value, href, external }, index) => (
+            <motion.a
+              key={label}
+              href={href}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
               className="
-                mx-auto
-                text-blue-500
-              "
-              size={36}
-            />
+                group
 
-            <h3
-              className="
-                text-xl md:text-2xl
-                font-semibold
+                p-6 md:p-8
 
-                mt-5 md:mt-6
+                bg-white/40
+                dark:bg-white/[0.03]
 
-                text-slate-900
-                dark:text-white
+                backdrop-blur-xl
+
+                border
+                border-white/60
+                dark:border-white/10
+
+                rounded-3xl
+
+                text-center
+
+                hover:-translate-y-1
+                hover:border-[#2563EB]/40
+                hover:shadow-[0_20px_50px_-20px_rgba(37,99,235,0.45)]
+
+                transition-all duration-300
               "
             >
-              Email
-            </h3>
 
-            <p
-              className="
-                text-slate-600
-                dark:text-slate-400
+              <Icon
+                className="
+                  mx-auto
+                  text-[#2563EB]
 
-                mt-3 md:mt-4
+                  transition-transform duration-300
 
-                text-sm md:text-base
+                  group-hover:scale-110
+                "
+                size={32}
+              />
 
-                break-all
-              "
-            >
-              nuxspaceid@gmail.com
-            </p>
+              <h3
+                className="
+                  font-display
+                  text-xl md:text-2xl
+                  font-bold
 
-          </div>
+                  mt-5 md:mt-6
 
-          {/* WHATSAPP */}
-          <div
-            className="
-              p-6 md:p-8
+                  text-[#0A0A0A]
+                  dark:text-[#FAFAFA]
+                "
+              >
+                {label}
+              </h3>
 
-              rounded-2xl md:rounded-3xl
+              <p
+                className="
+                  text-[#0A0A0A]/60
+                  dark:text-[#FAFAFA]/60
 
-              bg-white/80
-              dark:bg-[#111827]
+                  mt-3 md:mt-4
 
-              backdrop-blur-xl
+                  text-sm md:text-base
 
-              border border-slate-200
-              dark:border-white/10
+                  break-all
+                "
+              >
+                {value}
+              </p>
 
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
-
-              text-center
-
-              hover:border-blue-500/30
-              hover:-translate-y-1
-
-              transition
-            "
-          >
-
-            <Phone
-              className="
-                mx-auto
-                text-blue-500
-              "
-              size={36}
-            />
-
-            <h3
-              className="
-                text-xl md:text-2xl
-                font-semibold
-
-                mt-5 md:mt-6
-
-                text-slate-900
-                dark:text-white
-              "
-            >
-              WhatsApp
-            </h3>
-
-            <p
-              className="
-                text-slate-600
-                dark:text-slate-400
-
-                mt-3 md:mt-4
-
-                text-sm md:text-base
-              "
-            >
-              +62 85213840489
-            </p>
-
-          </div>
-
-          {/* INSTAGRAM */}
-          <div
-            className="
-              p-6 md:p-8
-
-              rounded-2xl md:rounded-3xl
-
-              bg-white/80
-              dark:bg-[#111827]
-
-              backdrop-blur-xl
-
-              border border-slate-200
-              dark:border-white/10
-
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
-
-              text-center
-
-              hover:border-blue-500/30
-              hover:-translate-y-1
-
-              transition
-
-              sm:col-span-2
-              md:col-span-1
-            "
-          >
-
-            <Image
-              className="
-                mx-auto
-                text-blue-500
-              "
-              size={36}
-            />
-
-            <h3
-              className="
-                text-xl md:text-2xl
-                font-semibold
-
-                mt-5 md:mt-6
-
-                text-slate-900
-                dark:text-white
-              "
-            >
-              Instagram
-            </h3>
-
-            <p
-              className="
-                text-slate-600
-                dark:text-slate-400
-
-                mt-3 md:mt-4
-
-                text-sm md:text-base
-              "
-            >
-              @nux.space
-            </p>
-
-          </div>
+            </motion.a>
+          ))}
 
         </div>
 

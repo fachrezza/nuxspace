@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import ImgH from "../assets/Mockup.png";
 
 export default function Portfolio() {
@@ -8,24 +10,12 @@ export default function Portfolio() {
       className="
         relative
         py-20 md:py-32
-        overflow-hidden
+
+        border-t
+        border-black/10
+        dark:border-white/10
       "
     >
-
-      {/* GLOW */}
-      <div
-        className="
-          absolute
-          top-0 right-0
-
-          w-[250px] md:w-[400px]
-          h-[250px] md:h-[400px]
-
-          bg-blue-500/10
-          blur-3xl
-          rounded-full
-        "
-      />
 
       <div
         className="
@@ -39,7 +29,11 @@ export default function Portfolio() {
       >
 
         {/* HEADER */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="
             flex flex-col
             md:flex-row md:items-end
@@ -53,15 +47,18 @@ export default function Portfolio() {
 
             <span
               className="
-                text-blue-500
-                font-semibold
+                flex items-center gap-2
+
+                font-mono
+                text-[#2563EB]
 
                 tracking-[0.2em] md:tracking-[0.3em]
                 uppercase
 
-                text-sm md:text-base
+                text-xs md:text-sm
               "
             >
+              <Plus size={12} strokeWidth={3} />
               Portfolio
             </span>
 
@@ -69,15 +66,16 @@ export default function Portfolio() {
               className="
                 mt-3 md:mt-5
 
+                font-display
                 text-3xl
                 sm:text-4xl
                 md:text-5xl
 
-                font-black
+                font-bold
                 tracking-tight
 
-                text-slate-900
-                dark:text-white
+                text-[#0A0A0A]
+                dark:text-[#FAFAFA]
               "
             >
               Featured Projects
@@ -89,52 +87,32 @@ export default function Portfolio() {
             to="/portfolio"
             className="
               group
-              relative
 
               px-7 py-4
 
-              rounded-2xl
+              rounded-xl
 
-              bg-gradient-to-r
-              from-blue-500
-              to-indigo-500
+              bg-[#0A0A0A]
+              dark:bg-[#FAFAFA]
 
-              text-white
+              text-[#FAFAFA]
+              dark:text-[#0A0A0A]
+
               font-semibold
 
-              shadow-lg
-              shadow-blue-500/20
+              hover:bg-[#2563EB]
+              dark:hover:bg-[#2563EB]
+              dark:hover:text-white
 
-              transition-all duration-300
+              hover:shadow-[0_0_28px_-6px_rgba(37,99,235,0.6)]
 
-              hover:scale-105
-              hover:shadow-2xl
-              hover:shadow-indigo-500/30
-
-              overflow-hidden
+              transition
             "
           >
-
-            <span
-              className="
-                absolute inset-0
-
-                bg-white/10
-
-                opacity-0
-                group-hover:opacity-100
-
-                transition
-              "
-            />
-
-            <span className="relative z-10">
-              View All Portfolio
-            </span>
-
+            View All Portfolio
           </Link>
 
-        </div>
+        </motion.div>
 
         {/* GRID */}
         <div
@@ -149,29 +127,27 @@ export default function Portfolio() {
         >
 
           {/* MAIN CARD */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className="
               group
               relative
               overflow-hidden
 
-              rounded-2xl md:rounded-[32px]
+              rounded-3xl
 
-              bg-white/80
-              dark:bg-white/5
-
-              backdrop-blur-xl
-
-              border border-slate-200
+              border
+              border-white/60
               dark:border-white/10
 
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
+              hover:border-[#2563EB]/50
+              hover:-translate-y-1
+              hover:shadow-[0_24px_60px_-24px_rgba(37,99,235,0.5)]
 
-              hover:border-blue-500/30
-
-              transition
+              transition-all duration-300
             "
           >
 
@@ -187,7 +163,7 @@ export default function Portfolio() {
                 w-full
                 object-cover
 
-                group-hover:scale-110
+                group-hover:scale-105
 
                 transition duration-700
               "
@@ -199,8 +175,8 @@ export default function Portfolio() {
                 absolute inset-0
 
                 bg-gradient-to-t
-                from-slate-900/80
-                via-blue-900/20
+                from-black/80
+                via-black/10
                 to-transparent
               "
             />
@@ -217,18 +193,10 @@ export default function Portfolio() {
 
               <span
                 className="
-                  px-3 md:px-4
-                  py-1 md:py-2
-
-                  rounded-full
-
-                  bg-blue-500/10
-                  border border-blue-500/20
-
-                  text-blue-500
-
+                  font-mono
                   text-[10px] md:text-xs
-                  font-semibold
+
+                  text-[#5B9BFF]
 
                   tracking-widest
                   uppercase
@@ -241,8 +209,9 @@ export default function Portfolio() {
                 className="
                   mt-3 md:mt-5
 
+                  font-display
                   text-xl md:text-3xl
-                  font-black
+                  font-bold
 
                   text-white
                 "
@@ -269,159 +238,40 @@ export default function Portfolio() {
 
             </div>
 
-          </div>
+          </motion.div>
 
           {/* UPCOMING 1 */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
             className="
               relative
               overflow-hidden
 
-              rounded-2xl md:rounded-[32px]
-
-              bg-white/80
-              dark:bg-white/5
+              bg-white/40
+              dark:bg-white/[0.03]
 
               backdrop-blur-xl
 
-              border border-dashed
-              border-slate-300
-              dark:border-white/10
+              rounded-3xl
 
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
+              border border-dashed
+              border-black/15
+              dark:border-white/15
 
               h-[220px]
               sm:h-[300px]
               md:h-[350px]
 
               flex items-center justify-center
+
+              hover:border-[#2563EB]/50
+
+              transition-colors duration-300
             "
           >
-
-            <div
-              className="
-                absolute inset-0
-
-                bg-white/40
-                dark:bg-black/50
-              "
-            />
-
-            <div
-              className="
-                relative
-                text-center
-
-                px-6
-              "
-            >
-
-              <div
-                className="
-                  w-14 md:w-20
-                  h-14 md:h-20
-
-                  rounded-full
-
-                  bg-blue-500/10
-                  border border-blue-500/20
-
-                  flex items-center justify-center
-
-                  mx-auto
-                "
-              >
-
-                <div
-                  className="
-                    w-3 md:w-4
-                    h-3 md:h-4
-
-                    rounded-full
-
-                    bg-blue-500
-                    animate-pulse
-                  "
-                />
-
-              </div>
-
-              <h3
-                className="
-                  mt-5 md:mt-8
-
-                  text-xl md:text-3xl
-                  font-black
-
-                  text-slate-900
-                  dark:text-white
-                "
-              >
-                Upcoming Project
-              </h3>
-
-              <p
-                className="
-                  mt-3 md:mt-4
-
-                  text-slate-600
-                  dark:text-slate-400
-
-                  text-sm md:text-base
-                  leading-relaxed
-                "
-              >
-                New creative project currently under development.
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* UPCOMING 2 */}
-          <div
-            className="
-              relative
-              overflow-hidden
-
-              rounded-2xl md:rounded-[32px]
-
-              bg-white/80
-              dark:bg-white/5
-
-              backdrop-blur-xl
-
-              border border-dashed
-              border-slate-300
-              dark:border-white/10
-
-              shadow-xl
-              shadow-slate-200/40
-              dark:shadow-black/20
-
-              h-[220px]
-              sm:h-[300px]
-              md:h-[350px]
-
-              flex items-center justify-center
-            "
-          >
-
-            <div
-              className="
-                absolute
-
-                w-32 md:w-40
-                h-32 md:h-40
-
-                bg-blue-500/20
-                blur-3xl
-
-                rounded-full
-              "
-            />
 
             <div
               className="
@@ -434,13 +284,100 @@ export default function Portfolio() {
 
               <span
                 className="
-                  text-blue-500
+                  font-mono
+                  text-[#2563EB]
 
-                  text-xs md:text-sm
-                  font-semibold
-
-                  tracking-[0.2em] md:tracking-[0.3em]
+                  text-xs
                   uppercase
+                  tracking-widest
+                "
+              >
+                In Progress
+              </span>
+
+              <h3
+                className="
+                  mt-4 md:mt-6
+
+                  font-display
+                  text-xl md:text-3xl
+                  font-bold
+
+                  text-[#0A0A0A]
+                  dark:text-[#FAFAFA]
+                "
+              >
+                Upcoming Project
+              </h3>
+
+              <p
+                className="
+                  mt-3 md:mt-4
+
+                  text-[#0A0A0A]/60
+                  dark:text-[#FAFAFA]/60
+
+                  text-sm md:text-base
+                  leading-relaxed
+                "
+              >
+                New creative project currently under development.
+              </p>
+
+            </div>
+
+          </motion.div>
+
+          {/* UPCOMING 2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="
+              relative
+              overflow-hidden
+
+              bg-white/40
+              dark:bg-white/[0.03]
+
+              backdrop-blur-xl
+
+              rounded-3xl
+
+              border border-dashed
+              border-black/15
+              dark:border-white/15
+
+              h-[220px]
+              sm:h-[300px]
+              md:h-[350px]
+
+              flex items-center justify-center
+
+              hover:border-[#2563EB]/50
+
+              transition-colors duration-300
+            "
+          >
+
+            <div
+              className="
+                relative
+                text-center
+
+                px-6
+              "
+            >
+
+              <span
+                className="
+                  font-mono
+                  text-[#2563EB]
+
+                  text-xs
+                  uppercase
+                  tracking-[0.3em]
                 "
               >
                 NuxSpace
@@ -450,11 +387,12 @@ export default function Portfolio() {
                 className="
                   mt-4 md:mt-6
 
+                  font-display
                   text-xl md:text-3xl
-                  font-black
+                  font-bold
 
-                  text-slate-900
-                  dark:text-white
+                  text-[#0A0A0A]
+                  dark:text-[#FAFAFA]
                 "
               >
                 Building Something Extraordinary
@@ -464,8 +402,8 @@ export default function Portfolio() {
                 className="
                   mt-3 md:mt-4
 
-                  text-slate-600
-                  dark:text-slate-400
+                  text-[#0A0A0A]/60
+                  dark:text-[#FAFAFA]/60
 
                   text-sm md:text-base
                   leading-relaxed
@@ -486,16 +424,23 @@ export default function Portfolio() {
 
                   rounded-full
 
-                  bg-slate-100
+                  bg-white/40
                   dark:bg-white/5
 
-                  border border-slate-200
-                  dark:border-white/10
+                  backdrop-blur-xl
 
-                  text-slate-600
-                  dark:text-slate-300
+                  border
+                  border-black/15
+                  dark:border-white/15
 
-                  text-xs md:text-sm
+                  text-[#0A0A0A]/60
+                  dark:text-[#FAFAFA]/60
+
+                  font-mono
+                  text-xs
+
+                  uppercase
+                  tracking-wide
                 "
               >
                 Currently Expanding Portfolio
@@ -503,7 +448,7 @@ export default function Portfolio() {
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 

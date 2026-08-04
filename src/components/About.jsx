@@ -1,6 +1,24 @@
 import { motion } from "framer-motion";
-import { Sparkles, Rocket, Globe } from "lucide-react";
+import { Plus } from "lucide-react";
 import AboutImg from "../assets/digital.jpg";
+
+const features = [
+  {
+    number: "01",
+    title: "Creative",
+    description: "Futuristic and premium visual experience.",
+  },
+  {
+    number: "02",
+    title: "Fast",
+    description: "Optimized modern website performance.",
+  },
+  {
+    number: "03",
+    title: "Global",
+    description: "Ready for startup and international brands.",
+  },
+];
 
 export default function About() {
   return (
@@ -9,34 +27,12 @@ export default function About() {
       className="
         relative
         py-20 md:py-32
-        overflow-hidden
+
+        border-t
+        border-black/10
+        dark:border-white/10
       "
     >
-
-      {/* GLOW */}
-      <div
-        className="
-          absolute top-0 left-0
-          w-[220px] sm:w-[300px] md:w-[400px]
-          h-[220px] sm:h-[300px] md:h-[400px]
-
-          bg-blue-500/10
-          blur-3xl
-          rounded-full
-        "
-      />
-
-      <div
-        className="
-          absolute bottom-0 right-0
-          w-[250px] sm:w-[350px] md:w-[500px]
-          h-[250px] sm:h-[350px] md:h-[500px]
-
-          bg-indigo-500/10
-          blur-3xl
-          rounded-full
-        "
-      />
 
       <div
         className="
@@ -48,19 +44,27 @@ export default function About() {
       >
 
         {/* TITLE */}
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
 
           <span
             className="
-              text-blue-500
-              font-semibold
+              flex items-center gap-2
+
+              font-mono
+              text-[#2563EB]
 
               tracking-[0.2em] md:tracking-[0.3em]
 
               uppercase
-              text-xs sm:text-sm md:text-base
+              text-xs sm:text-sm
             "
           >
+            <Plus size={12} strokeWidth={3} />
             About Us
           </span>
 
@@ -68,40 +72,27 @@ export default function About() {
             className="
               mt-4 md:mt-6
 
+              font-display
               text-3xl
               sm:text-4xl
-              md:text-5xl
-              lg:text-6xl
+              md:text-6xl
 
-              font-black
+              font-bold
               tracking-tight
               leading-tight
 
-              text-slate-900
-              dark:text-white
+              text-[#0A0A0A]
+              dark:text-[#FAFAFA]
+
+              max-w-3xl
             "
           >
             Creating Digital
-
-            <span
-              className="
-                bg-gradient-to-r
-                from-blue-500
-                to-indigo-500
-
-                bg-clip-text
-                text-transparent
-              "
-            >
-              {" "}Experience
-            </span>
-
-            <br />
-
-            Beyond Expectations
+            <span className="text-[#2563EB]"> Experience</span>
+            {" "}Beyond Expectations
           </h2>
 
-        </div>
+        </motion.div>
 
         {/* CONTENT */}
         <div
@@ -118,9 +109,9 @@ export default function About() {
 
           {/* IMAGE SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="
               relative
@@ -128,54 +119,64 @@ export default function About() {
             "
           >
 
-            {/* OUTER GLOW */}
+            {/* GLOW */}
             <div
               className="
-                absolute inset-0
-                bg-blue-500/20
-                blur-3xl
+                absolute -inset-6
+
+                bg-[#2563EB]/20
+                dark:bg-[#2563EB]/25
+
                 rounded-full
+                blur-[100px]
+
+                pointer-events-none
               "
             />
 
-            {/* IMAGE CARD */}
             <div
               className="
+                group
                 relative
+                overflow-hidden
 
-                bg-white/80
-                dark:bg-white/5
+                bg-white/40
+                dark:bg-white/[0.03]
 
-                backdrop-blur-2xl
+                backdrop-blur-xl
 
-                border border-slate-200
+                border
+                border-white/60
                 dark:border-white/10
 
-                rounded-2xl md:rounded-[40px]
+                rounded-3xl
 
-                p-2 sm:p-3 md:p-5
+                p-2 sm:p-3
 
-                shadow-xl
-                shadow-slate-200/40
-                dark:shadow-black/20
+                shadow-[0_20px_60px_-24px_rgba(37,99,235,0.4)]
               "
             >
 
-              <img
-                src={AboutImg}
-                alt="about"
-                className="
-                  rounded-xl md:rounded-[32px]
+              <div className="overflow-hidden">
+                <img
+                  src={AboutImg}
+                  alt="about"
+                  className="
+                    h-[220px]
+                    sm:h-[340px]
+                    md:h-[550px]
+                    lg:h-[650px]
 
-                  h-[220px]
-                  sm:h-[340px]
-                  md:h-[550px]
-                  lg:h-[650px]
+                    w-full
+                    object-cover
 
-                  w-full
-                  object-cover
-                "
-              />
+                    grayscale
+                    group-hover:grayscale-0
+
+                    transition-all duration-500
+                  "
+                />
+              </div>
 
               {/* FLOAT CARD */}
               <div
@@ -185,33 +186,38 @@ export default function About() {
                   bottom-3 left-3
                   md:bottom-8 md:left-8
 
-                  bg-white/90
-                  dark:bg-[#0f172a]/80
+                  bg-white/70
+                  dark:bg-[#0A0A0A]/70
 
                   backdrop-blur-xl
 
-                  border border-slate-200
+                  border
+                  border-white/60
                   dark:border-white/10
 
-                  rounded-xl md:rounded-3xl
+                  rounded-2xl
 
                   px-3 py-2
                   md:px-6 md:py-5
 
-                  shadow-xl
-
                   max-w-[160px]
                   sm:max-w-xs
+
+                  shadow-[0_10px_30px_-12px_rgba(37,99,235,0.4)]
                 "
               >
 
                 <p
                   className="
-                    text-slate-500
-                    dark:text-slate-400
+                    font-mono
+                    text-[#0A0A0A]/50
+                    dark:text-[#FAFAFA]/50
 
-                    text-[10px]
-                    md:text-sm
+                    text-[9px]
+                    md:text-xs
+
+                    uppercase
+                    tracking-wide
                   "
                 >
                   Creative Developer
@@ -221,14 +227,15 @@ export default function About() {
                   className="
                     mt-1
 
+                    font-display
                     text-sm
                     sm:text-base
                     md:text-2xl
 
                     font-bold
 
-                    text-slate-900
-                    dark:text-white
+                    text-[#0A0A0A]
+                    dark:text-[#FAFAFA]
                   "
                 >
                   Modern Vision
@@ -242,17 +249,17 @@ export default function About() {
 
           {/* TEXT SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
 
             <p
               className="
-                text-slate-600
-                dark:text-slate-400
+                text-[#0A0A0A]/60
+                dark:text-[#FAFAFA]/60
 
                 text-sm sm:text-base md:text-lg
                 leading-relaxed
@@ -268,8 +275,8 @@ export default function About() {
               className="
                 mt-5 md:mt-8
 
-                text-slate-600
-                dark:text-slate-400
+                text-[#0A0A0A]/60
+                dark:text-[#FAFAFA]/60
 
                 text-sm sm:text-base md:text-lg
                 leading-relaxed
@@ -285,192 +292,84 @@ export default function About() {
             <div
               className="
                 grid
-                grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-
-                gap-3 md:gap-6
+                grid-cols-1 sm:grid-cols-3
+                gap-4
 
                 mt-8 md:mt-14
               "
             >
 
-              {/* CARD 1 */}
-              <div
-                className="
-                  p-4 md:p-6
-
-                  rounded-2xl md:rounded-3xl
-
-                  bg-white/80
-                  dark:bg-white/5
-
-                  backdrop-blur-xl
-
-                  border border-slate-200
-                  dark:border-white/10
-
-                  shadow-lg
-                  shadow-slate-200/40
-                  dark:shadow-black/20
-
-                  hover:border-blue-500/30
-
-                  transition
-                "
-              >
-
-                <Sparkles
-                  className="text-blue-500"
-                  size={24}
-                />
-
-                <h3
+              {features.map(({ number, title, description }, index) => (
+                <motion.div
+                  key={number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="
-                    mt-4
+                    p-5 md:p-6
 
-                    font-bold
-                    text-base md:text-xl
+                    bg-white/40
+                    dark:bg-white/[0.03]
 
-                    text-slate-900
-                    dark:text-white
+                    backdrop-blur-xl
+
+                    border
+                    border-white/60
+                    dark:border-white/10
+
+                    rounded-2xl
+
+                    hover:-translate-y-1
+                    hover:border-[#2563EB]/40
+                    hover:shadow-[0_16px_40px_-18px_rgba(37,99,235,0.45)]
+
+                    transition-all duration-300
                   "
                 >
-                  Creative
-                </h3>
 
-                <p
-                  className="
-                    mt-2
+                  <span
+                    className="
+                      font-mono
+                      text-sm
+                      font-semibold
 
-                    text-slate-600
-                    dark:text-slate-400
+                      text-[#2563EB]
+                    "
+                  >
+                    {number}
+                  </span>
 
-                    text-sm
-                  "
-                >
-                  Futuristic and premium visual experience.
-                </p>
+                  <h3
+                    className="
+                      mt-3
 
-              </div>
+                      font-display
+                      font-bold
+                      text-base md:text-lg
 
-              {/* CARD 2 */}
-              <div
-                className="
-                  p-4 md:p-6
+                      text-[#0A0A0A]
+                      dark:text-[#FAFAFA]
+                    "
+                  >
+                    {title}
+                  </h3>
 
-                  rounded-2xl md:rounded-3xl
+                  <p
+                    className="
+                      mt-2
 
-                  bg-white/80
-                  dark:bg-white/5
+                      text-[#0A0A0A]/60
+                      dark:text-[#FAFAFA]/60
 
-                  backdrop-blur-xl
+                      text-sm
+                    "
+                  >
+                    {description}
+                  </p>
 
-                  border border-slate-200
-                  dark:border-white/10
-
-                  shadow-lg
-                  shadow-slate-200/40
-                  dark:shadow-black/20
-
-                  hover:border-blue-500/30
-
-                  transition
-                "
-              >
-
-                <Rocket
-                  className="text-blue-500"
-                  size={24}
-                />
-
-                <h3
-                  className="
-                    mt-4
-
-                    font-bold
-                    text-base md:text-xl
-
-                    text-slate-900
-                    dark:text-white
-                  "
-                >
-                  Fast
-                </h3>
-
-                <p
-                  className="
-                    mt-2
-
-                    text-slate-600
-                    dark:text-slate-400
-
-                    text-sm
-                  "
-                >
-                  Optimized modern website performance.
-                </p>
-
-              </div>
-
-              {/* CARD 3 */}
-              <div
-                className="
-                  p-4 md:p-6
-
-                  rounded-2xl md:rounded-3xl
-
-                  bg-white/80
-                  dark:bg-white/5
-
-                  backdrop-blur-xl
-
-                  border border-slate-200
-                  dark:border-white/10
-
-                  shadow-lg
-                  shadow-slate-200/40
-                  dark:shadow-black/20
-
-                  hover:border-blue-500/30
-
-                  transition
-
-                  sm:col-span-2 xl:col-span-1
-                "
-              >
-
-                <Globe
-                  className="text-blue-500"
-                  size={24}
-                />
-
-                <h3
-                  className="
-                    mt-4
-
-                    font-bold
-                    text-base md:text-xl
-
-                    text-slate-900
-                    dark:text-white
-                  "
-                >
-                  Global
-                </h3>
-
-                <p
-                  className="
-                    mt-2
-
-                    text-slate-600
-                    dark:text-slate-400
-
-                    text-sm
-                  "
-                >
-                  Ready for startup and international brands.
-                </p>
-
-              </div>
+                </motion.div>
+              ))}
 
             </div>
 

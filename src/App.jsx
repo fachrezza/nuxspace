@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import PortfolioPage from "./pages/PortfolioPage";
 import ScrollToTop from "./components/ScrollToTop";
 import CatalogPage from "./pages/CatalogPage";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <FloatingWhatsApp />
 
       <Routes>
         <Route path="/" element={<Home />} />

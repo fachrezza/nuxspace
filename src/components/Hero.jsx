@@ -1,8 +1,35 @@
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Clock, MessageCircle, Plus } from "lucide-react";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.09 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const steps = [
+  {
+    number: "01",
+    title: "Discovery",
+    description: "Understanding your needs and goals",
+  },
+  {
+    number: "02",
+    title: "Design & Build",
+    description: "Crafting modern UI and clean code",
+  },
+  {
+    number: "03",
+    title: "Launch",
+    description: "Deploy and optimize for performance",
+  },
+];
 
 export default function Hero() {
   return (
@@ -16,6 +43,81 @@ export default function Hero() {
         pt-32
       "
     >
+
+      {/* DECORATIVE LAYER */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+
+        {/* SOFT GLOW */}
+        <div
+          className="
+            absolute
+            top-1/2 right-[-160px]
+            -translate-y-1/2
+
+            w-[600px] h-[600px]
+
+            rounded-full
+
+            bg-[#2563EB]/20
+            dark:bg-[#2563EB]/25
+
+            blur-[110px]
+          "
+        />
+
+        {/* LARGE OUTLINE CIRCLE */}
+        <div
+          className="
+            absolute
+            top-1/2 right-[-180px]
+            -translate-y-1/2
+
+            w-[500px] h-[500px]
+
+            rounded-full
+
+            border border-[#2563EB]/20
+          "
+        />
+
+        <div
+          className="
+            absolute
+            top-1/2 right-[-180px]
+            -translate-y-1/2
+
+            w-[380px] h-[380px]
+
+            rounded-full
+
+            border border-[#2563EB]/15
+          "
+        />
+
+        {/* CROSSHAIR MARKS */}
+        <Plus
+          size={16}
+          className="
+            absolute
+            top-24 left-4 md:left-10
+
+            text-[#0A0A0A]/20
+            dark:text-[#FAFAFA]/20
+          "
+        />
+
+        <Plus
+          size={16}
+          className="
+            absolute
+            bottom-16 left-1/2
+
+            text-[#0A0A0A]/20
+            dark:text-[#FAFAFA]/20
+          "
+        />
+
+      </div>
 
       <div className="
         max-w-7xl
@@ -33,82 +135,53 @@ export default function Hero() {
         <div>
 
           <motion.div
-            initial={{ opacity: 0, y: 70 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            variants={container}
+            initial="hidden"
+            animate="show"
           >
 
-            {/* BADGE */}
-            <div
+            {/* LABEL */}
+            <motion.span
+              variants={item}
               className="
-                inline-flex
-                items-center
-                gap-2
+                flex items-center gap-2
 
-                px-5 py-3
+                font-mono
+                text-xs
+                uppercase
+                tracking-[0.3em]
 
-                rounded-full
-
-                bg-white/80
-                dark:bg-white/5
-
-                backdrop-blur-xl
-
-                border border-slate-200
-                dark:border-white/10
-
-                shadow-lg
-                shadow-slate-200/40
-                dark:shadow-black/20
+                text-[#2563EB]
               "
             >
-
-              <Sparkles
-                size={18}
-                className="text-blue-500"
-              />
-
-              <span className="
-                text-sm
-                font-semibold
-
-                text-slate-700
-                dark:text-slate-300
-              ">
-                Futuristic Digital Agency
-              </span>
-
-            </div>
+              <Plus size={12} strokeWidth={3} />
+              NUX SPACE Agency
+            </motion.span>
 
             {/* TITLE */}
-            <h1
+            <motion.h1
+              variants={item}
               className="
-                mt-10
+                mt-6
 
-                text-3xl
-                md:text-6xl
+                font-display
 
-                font-black
+                text-4xl
+                sm:text-5xl
+                md:text-7xl
 
-                leading-[1.1]
+                font-bold
+
+                leading-[1.02]
                 tracking-tight
 
-                text-slate-900
-                dark:text-white
+                text-[#0A0A0A]
+                dark:text-[#FAFAFA]
               "
             >
               Build Your
 
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500
-
-                  bg-clip-text
-                  text-transparent
-                "
-              >
+              <span className="text-[#2563EB]">
                 {" "}Digital
               </span>
 
@@ -116,29 +189,33 @@ export default function Hero() {
 
               Presence With a New Experience
 
-            </h1>
+            </motion.h1>
 
             {/* DESC */}
-            <p className="
+            <motion.p
+              variants={item}
+              className="
               mt-8
 
               text-lg
               leading-relaxed
 
-              text-slate-600
-              dark:text-slate-400
+              text-[#0A0A0A]/60
+              dark:text-[#FAFAFA]/60
 
               max-w-xl
             ">
               Nux Space delivers modern websites
               and creative visual designs to help brands,
               businesses, and creators stand out in the digital world.
-            </p>
+            </motion.p>
 
             {/* BUTTON */}
-            <div className="
+            <motion.div
+              variants={item}
+              className="
               flex flex-wrap
-              gap-5
+              gap-4
               mt-10
             ">
 
@@ -149,20 +226,23 @@ export default function Hero() {
 
                   px-8 py-4
 
-                  rounded-2xl
+                  rounded-xl
 
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500
+                  bg-[#0A0A0A]
+                  dark:bg-[#FAFAFA]
 
-                  text-white
+                  text-[#FAFAFA]
+                  dark:text-[#0A0A0A]
+
                   font-semibold
 
                   flex items-center gap-3
 
-                  hover:scale-105
-                  hover:shadow-2xl
-                  hover:shadow-indigo-400/40
+                  hover:bg-[#2563EB]
+                  dark:hover:bg-[#2563EB]
+                  dark:hover:text-white
+
+                  hover:shadow-[0_0_32px_-6px_rgba(37,99,235,0.6)]
 
                   transition
                 "
@@ -185,23 +265,23 @@ export default function Hero() {
                 className="
                   px-8 py-4
 
-                  rounded-2xl
+                  rounded-xl
 
-                  bg-white/80
+                  bg-white/50
                   dark:bg-white/5
 
                   backdrop-blur-xl
 
-                  border border-slate-200
-                  dark:border-white/10
+                  border border-white/60
+                  dark:border-white/15
 
-                  text-slate-700
-                  dark:text-white
+                  text-[#0A0A0A]
+                  dark:text-[#FAFAFA]
 
                   font-semibold
 
-                  hover:bg-slate-100
-                  dark:hover:bg-white/10
+                  hover:border-[#2563EB]
+                  hover:text-[#2563EB]
 
                   transition
                 "
@@ -209,7 +289,41 @@ export default function Hero() {
                 Order Now
               </a>
 
-            </div>
+            </motion.div>
+
+            {/* TRUST CHIPS */}
+            <motion.div
+              variants={item}
+              className="
+                flex flex-wrap
+                items-center
+                gap-x-5 gap-y-2
+
+                mt-6
+
+                font-mono
+                text-xs
+                uppercase
+                tracking-wide
+
+                text-[#0A0A0A]/50
+                dark:text-[#FAFAFA]/50
+              "
+            >
+
+              <span className="flex items-center gap-1.5">
+                <Clock size={13} className="text-[#2563EB]" />
+                Fast Response
+              </span>
+
+              <span className="hidden sm:inline">/</span>
+
+              <span className="flex items-center gap-1.5">
+                <MessageCircle size={13} className="text-[#2563EB]" />
+                Free Consultation
+              </span>
+
+            </motion.div>
 
           </motion.div>
 
@@ -222,9 +336,9 @@ export default function Hero() {
         ">
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
             className="
               relative
               w-full
@@ -232,68 +346,45 @@ export default function Hero() {
             "
           >
 
-            {/* Glow */}
-            <div className="
-              absolute
-              -top-10 -left-10
-
-              w-72 h-72
-
-              bg-blue-500/20
-              blur-3xl
-
-              rounded-full
-            " />
-
-            <div className="
-              absolute
-              -bottom-10 -right-10
-
-              w-72 h-72
-
-              bg-indigo-500/20
-              blur-3xl
-
-              rounded-full
-            " />
-
             {/* Card */}
             <div
               className="
                 relative
 
-                bg-white/80
-                dark:bg-white/5
+                bg-white/60
+                dark:bg-white/[0.05]
 
                 backdrop-blur-2xl
 
-                border border-slate-200
+                border border-white/60
                 dark:border-white/10
 
                 rounded-3xl
 
-                p-6
+                p-8
 
-                shadow-2xl
-                shadow-slate-200/40
-                dark:shadow-black/20
+                shadow-[0_20px_60px_-20px_rgba(37,99,235,0.35)]
+                dark:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]
               "
             >
 
               {/* Header */}
-              <div className="mb-6">
+              <div className="mb-8">
 
                 <h3 className="
-                  text-blue-500
-                  font-semibold
+                  font-display
+                  font-bold
                   text-lg
+
+                  text-[#0A0A0A]
+                  dark:text-[#FAFAFA]
                 ">
                   How We Work
                 </h3>
 
                 <p className="
-                  text-slate-500
-                  dark:text-slate-400
+                  text-[#0A0A0A]/50
+                  dark:text-[#FAFAFA]/50
 
                   text-sm
                   mt-1
@@ -304,167 +395,81 @@ export default function Hero() {
               </div>
 
               {/* Steps */}
-              <div className="space-y-4">
+              <div className="space-y-6">
 
-                {/* 1 */}
-                <div className="flex gap-3">
+                {steps.map(({ number, title, description }) => (
+                  <div
+                    key={number}
+                    className="
+                      group
+                      flex gap-4
+                    "
+                  >
 
-                  <span className="
-                    w-8 h-8
+                    <span
+                      className="
+                        font-mono
+                        text-sm
+                        font-semibold
 
-                    flex items-center justify-center
+                        text-[#2563EB]
 
-                    rounded-full
+                        transition-transform
+                        duration-300
 
-                    bg-blue-500/20
+                        group-hover:translate-x-1
+                      "
+                    >
+                      {number}
+                    </span>
 
-                    text-blue-500
+                    <div>
 
-                    text-sm
-                    font-bold
-                  ">
-                    1
-                  </span>
+                      <p className="
+                        text-[#0A0A0A]
+                        dark:text-[#FAFAFA]
 
-                  <div>
+                        font-semibold
+                        text-sm
+                      ">
+                        {title}
+                      </p>
 
-                    <p className="
-                      text-slate-900
-                      dark:text-white
+                      <p className="
+                        text-[#0A0A0A]/50
+                        dark:text-[#FAFAFA]/50
 
-                      font-semibold
-                      text-sm
-                    ">
-                      Discovery
-                    </p>
+                        text-xs
+                        mt-0.5
+                      ">
+                        {description}
+                      </p>
 
-                    <p className="
-                      text-slate-500
-                      dark:text-slate-400
-
-                      text-xs
-                    ">
-                      Understanding your needs and goals
-                    </p>
-
-                  </div>
-
-                </div>
-
-                {/* 2 */}
-                <div className="flex gap-3">
-
-                  <span className="
-                    w-8 h-8
-
-                    flex items-center justify-center
-
-                    rounded-full
-
-                    bg-indigo-500/20
-
-                    text-indigo-500
-
-                    text-sm
-                    font-bold
-                  ">
-                    2
-                  </span>
-
-                  <div>
-
-                    <p className="
-                      text-slate-900
-                      dark:text-white
-
-                      font-semibold
-                      text-sm
-                    ">
-                      Design & Build
-                    </p>
-
-                    <p className="
-                      text-slate-500
-                      dark:text-slate-400
-
-                      text-xs
-                    ">
-                      Crafting modern UI and clean code
-                    </p>
+                    </div>
 
                   </div>
-
-                </div>
-
-                {/* 3 */}
-                <div className="flex gap-3">
-
-                  <span className="
-                    w-8 h-8
-
-                    flex items-center justify-center
-
-                    rounded-full
-
-                    bg-purple-500/20
-
-                    text-purple-500
-
-                    text-sm
-                    font-bold
-                  ">
-                    3
-                  </span>
-
-                  <div>
-
-                    <p className="
-                      text-slate-900
-                      dark:text-white
-
-                      font-semibold
-                      text-sm
-                    ">
-                      Launch
-                    </p>
-
-                    <p className="
-                      text-slate-500
-                      dark:text-slate-400
-
-                      text-xs
-                    ">
-                      Deploy and optimize for performance
-                    </p>
-
-                  </div>
-
-                </div>
+                ))}
 
               </div>
 
               {/* Bottom */}
               <div
                 className="
-                  mt-6
-                  p-4
+                  mt-8
+                  pt-6
 
-                  rounded-2xl
-
-                  bg-gradient-to-r
-                  from-blue-500/10
-                  to-indigo-500/10
-
-                  border border-slate-200
+                  border-t
+                  border-white/60
                   dark:border-white/10
                 "
               >
 
                 <p className="
                   text-sm
+                  leading-relaxed
 
-                  text-slate-600
-                  dark:text-slate-300
+                  text-[#0A0A0A]/60
+                  dark:text-[#FAFAFA]/60
                 ">
                   We help startups and small businesses
                   build a strong digital presence from zero.

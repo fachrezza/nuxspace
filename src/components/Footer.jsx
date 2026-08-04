@@ -1,3 +1,27 @@
+import { Mail } from "lucide-react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+
+const links = [
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:nuxspaceid@gmail.com",
+    external: false,
+  },
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    href: "https://wa.me/6285213840489?text=Halo%20NuxSpace%2C%20saya%20tertarik%20dengan%20layanan%20Anda",
+    external: true,
+  },
+  {
+    icon: FaInstagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/nux.space",
+    external: true,
+  },
+];
+
 export default function Footer() {
   return (
     <footer
@@ -5,13 +29,8 @@ export default function Footer() {
         py-10
 
         border-t
-        border-slate-200
+        border-black/10
         dark:border-white/10
-
-        bg-white/70
-        dark:bg-transparent
-
-        backdrop-blur-xl
       "
     >
 
@@ -21,9 +40,8 @@ export default function Footer() {
 
         px-4 sm:px-6
 
-        flex flex-col md:flex-row
+        flex flex-col md:grid md:grid-cols-3
         items-center
-        justify-between
 
         gap-4
 
@@ -32,34 +50,70 @@ export default function Footer() {
 
         {/* LOGO */}
         <h1 className="
+          font-display
           text-xl md:text-2xl
           font-bold
-        ">
-          <span className="
-            bg-gradient-to-r
-            from-blue-500
-            to-indigo-500
 
-            bg-clip-text
-            text-transparent
-          ">
+          md:justify-self-start
+        ">
+          <span className="text-[#2563EB]">
             NuX
           </span>
 
           <span className="
-            text-slate-900
-            dark:text-white
+            text-[#0A0A0A]
+            dark:text-[#FAFAFA]
           ">
             Space
           </span>
         </h1>
 
+        {/* CONTACT LINKS */}
+        <div className="flex items-center gap-3 md:justify-self-center">
+
+          {links.map(({ icon: Icon, label, href, external }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              {...(external
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
+              className="
+                w-9 h-9
+
+                rounded-xl
+
+                border border-black/10
+                dark:border-white/10
+
+                flex items-center justify-center
+
+                text-[#0A0A0A]/50
+                dark:text-[#FAFAFA]/50
+
+                hover:text-[#2563EB]
+                hover:border-[#2563EB]
+                hover:shadow-[0_0_16px_-4px_rgba(37,99,235,0.5)]
+
+                transition
+              "
+            >
+              <Icon size={16} />
+            </a>
+          ))}
+
+        </div>
+
         {/* TEXT */}
         <p className="
-          text-slate-500
-          dark:text-slate-400
+          font-mono
+          text-[#0A0A0A]/50
+          dark:text-[#FAFAFA]/50
 
-          text-xs md:text-sm
+          text-xs
+
+          md:justify-self-end
         ">
           © 2026 NuX Space. All rights reserved.
         </p>

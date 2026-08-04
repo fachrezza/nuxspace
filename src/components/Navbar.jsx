@@ -8,225 +8,234 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 md:pt-5">
 
         <div
           className="
-            bg-white/80
-            dark:bg-white/5
+            bg-white/60
+            dark:bg-white/[0.04]
 
             backdrop-blur-2xl
 
-            border border-slate-200
+            border
+            border-white/50
             dark:border-white/10
 
             rounded-2xl
 
-            px-5 md:px-8
-            py-3 md:py-4
+            px-4 sm:px-6
+
+            h-16 md:h-18
 
             flex items-center justify-between
 
-            shadow-xl
-            shadow-slate-200/40
-            dark:shadow-black/20
+            shadow-[0_8px_32px_-12px_rgba(37,99,235,0.25)]
+            dark:shadow-[0_8px_32px_-12px_rgba(0,0,0,0.5)]
 
             transition-colors duration-300
           "
         >
 
-          {/* LOGO */}
-          <Link
-            to="/"
-            className="shrink-0"
-          >
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="shrink-0"
+        >
 
-            <h1
-              className="
-                text-2xl
-                font-black
-                tracking-tight
-              "
-            >
-
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500
-
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                NuX
-              </span>
-
-              <span
-                className="
-                  text-slate-900
-                  dark:text-white
-                "
-              >
-                Space
-              </span>
-
-            </h1>
-
-          </Link>
-
-          {/* NAV */}
-          <nav
+          <h1
             className="
-              hidden md:flex
-
-              items-center
-
-              gap-6 lg:gap-8
-
-              text-sm
-              font-medium
+              font-display
+              text-xl md:text-2xl
+              font-bold
+              tracking-tight
             "
           >
 
-            {isHome ? (
-              <>
-                <a
-                  href="#home"
-                  className="
-                    text-slate-600
-                    dark:text-slate-300
+            <span className="text-[#2563EB]">
+              NuX
+            </span>
 
-                    hover:text-blue-500
+            <span
+              className="
+                text-[#0A0A0A]
+                dark:text-[#FAFAFA]
+              "
+            >
+              Space
+            </span>
 
-                    transition
-                  "
-                >
-                  Home
-                </a>
+          </h1>
 
-                <a
-                  href="#catalog"
-                  className="
-                    text-slate-600
-                    dark:text-slate-300
+        </Link>
 
-                    hover:text-blue-500
+        {/* NAV */}
+        <nav
+          className="
+            hidden md:flex
 
-                    transition
-                  "
-                >
-                  Catalog
-                </a>
+            items-center
 
-                <a
-                  href="#portfolio"
-                  className="
-                    text-slate-600
-                    dark:text-slate-300
+            gap-8
 
-                    hover:text-blue-500
+            font-mono
+            text-xs
+            uppercase
+            tracking-widest
+          "
+        >
 
-                    transition
-                  "
-                >
-                  Portfolio
-                </a>
+          {isHome ? (
+            <>
+              <a
+                href="#home"
+                className="
+                  text-[#0A0A0A]/70
+                  dark:text-[#FAFAFA]/70
 
-                <a
-                  href="#about"
-                  className="
-                    text-slate-600
-                    dark:text-slate-300
+                  hover:text-[#2563EB]
 
-                    hover:text-blue-500
+                  transition
+                "
+              >
+                Home
+              </a>
 
-                    transition
-                  "
-                >
-                  About
-                </a>
+              <a
+                href="#catalog"
+                className="
+                  text-[#0A0A0A]/70
+                  dark:text-[#FAFAFA]/70
 
-                <a
-                  href="#contact"
-                  className="
-                    text-slate-600
-                    dark:text-slate-300
+                  hover:text-[#2563EB]
 
-                    hover:text-blue-500
+                  transition
+                "
+              >
+                Catalog
+              </a>
 
-                    transition
-                  "
-                >
-                  Contact
-                </a>
-              </>
-            ) : null}
+              <a
+                href="#portfolio"
+                className="
+                  text-[#0A0A0A]/70
+                  dark:text-[#FAFAFA]/70
 
-          </nav>
+                  hover:text-[#2563EB]
 
-          {/* RIGHT */}
-          <div className="flex items-center gap-4">
+                  transition
+                "
+              >
+                Portfolio
+              </a>
 
-            {/* THEME TOGGLE */}
-            <ThemeToggle />
+              <a
+                href="#about"
+                className="
+                  text-[#0A0A0A]/70
+                  dark:text-[#FAFAFA]/70
 
-            {/* BUTTON */}
-            {isHome ? (
+                  hover:text-[#2563EB]
+
+                  transition
+                "
+              >
+                About
+              </a>
+
               <a
                 href="#contact"
                 className="
-                  hidden md:flex
+                  text-[#0A0A0A]/70
+                  dark:text-[#FAFAFA]/70
 
-                  px-5 py-3
-
-                  rounded-xl
-
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500
-
-                  text-white
-                  font-semibold
-
-                  hover:scale-105
-                  hover:shadow-xl
-                  hover:shadow-blue-300/40
+                  hover:text-[#2563EB]
 
                   transition
                 "
               >
-                Let's Talk
+                Contact
               </a>
-            ) : (
-              <Link
-                to="/"
-                className="
-                  hidden md:flex
+            </>
+          ) : null}
 
-                  px-5 py-3
+        </nav>
 
-                  rounded-xl
+        {/* RIGHT */}
+        <div className="flex items-center gap-3">
 
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500
+          {/* THEME TOGGLE */}
+          <ThemeToggle />
 
-                  text-white
-                  font-semibold
+          {/* BUTTON */}
+          {isHome ? (
+            <a
+              href="#contact"
+              className="
+                hidden md:flex
 
-                  hover:scale-105
-                  hover:shadow-xl
-                  hover:shadow-blue-300/40
+                px-5 py-2.5
 
-                  transition
-                "
-              >
-                Back Home
-              </Link>
-            )}
+                rounded-xl
 
-          </div>
+                bg-[#0A0A0A]
+                dark:bg-[#FAFAFA]
+
+                text-[#FAFAFA]
+                dark:text-[#0A0A0A]
+
+                font-mono
+                text-xs
+                uppercase
+                tracking-widest
+                font-semibold
+
+                hover:bg-[#2563EB]
+                dark:hover:bg-[#2563EB]
+                dark:hover:text-white
+
+                hover:shadow-[0_0_24px_-4px_rgba(37,99,235,0.6)]
+
+                transition
+              "
+            >
+              Let's Talk
+            </a>
+          ) : (
+            <Link
+              to="/"
+              className="
+                hidden md:flex
+
+                px-5 py-2.5
+
+                rounded-xl
+
+                bg-[#0A0A0A]
+                dark:bg-[#FAFAFA]
+
+                text-[#FAFAFA]
+                dark:text-[#0A0A0A]
+
+                font-mono
+                text-xs
+                uppercase
+                tracking-widest
+                font-semibold
+
+                hover:bg-[#2563EB]
+                dark:hover:bg-[#2563EB]
+                dark:hover:text-white
+
+                hover:shadow-[0_0_24px_-4px_rgba(37,99,235,0.6)]
+
+                transition
+              "
+            >
+              Back Home
+            </Link>
+          )}
+
+        </div>
 
         </div>
 

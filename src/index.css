@@ -2,17 +2,50 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: var(--font-body);
   overflow-x: hidden;
   position: relative;
 
-  background: #f8fafc;
-  color: #0f172a;
+  background-color: #fafafa;
+  color: #0a0a0a;
+
+  background-image:
+    radial-gradient(rgba(10, 10, 10, 0.07) 1px, transparent 1px),
+    radial-gradient(
+      ellipse 900px 600px at 85% 15%,
+      rgba(96, 165, 250, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 800px 600px at 10% 70%,
+      rgba(37, 99, 235, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 1200px 800px at 50% -10%,
+      rgba(37, 99, 235, 0.14),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #eef3ff 0%, #fafafa 45%);
+  background-size:
+    28px 28px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
 
   transition:
     background-color 0.3s ease,
@@ -21,8 +54,27 @@ body {
 
 /* DARK MODE */
 .dark body {
-  background: #060816;
-  color: #f8fafc;
+  background-color: #0a0a0a;
+  color: #fafafa;
+
+  background-image:
+    radial-gradient(rgba(250, 250, 250, 0.08) 1px, transparent 1px),
+    radial-gradient(
+      ellipse 900px 600px at 85% 15%,
+      rgba(96, 165, 250, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 800px 600px at 10% 70%,
+      rgba(37, 99, 235, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 1200px 800px at 50% -10%,
+      rgba(37, 99, 235, 0.22),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0d1526 0%, #0a0a0a 45%);
 }
 
 /* SCROLLBAR */
@@ -31,53 +83,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #e2e8f0;
+  background: #e5e5e5;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #060816;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 999px;
+  background: #2563eb;
+  border-radius: 0;
 }
 
 /* TEXT SELECTION */
 ::selection {
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
-}
-
-/* GLOBAL GLOW */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  top: 50%;
-  width: 600px;
-  height: 600px;
-  transform: translateY(-50%);
-  filter: blur(140px);
-  opacity: 0.18;
-  z-index: -1;
-  pointer-events: none;
-}
-
-body::before {
-  left: -250px;
-  background: radial-gradient(circle, #60a5fa, transparent 60%);
-}
-
-body::after {
-  right: -250px;
-  background: radial-gradient(circle, #818cf8, transparent 60%);
-}
-
-.dark body::before {
-  opacity: 0.25;
-}
-
-.dark body::after {
-  opacity: 0.25;
 }

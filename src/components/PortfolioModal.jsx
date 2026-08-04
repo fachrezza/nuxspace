@@ -23,57 +23,66 @@ export default function PortfolioModal({
           relative
           max-w-6xl
           w-full
-          rounded-[40px]
+          rounded-3xl
           overflow-hidden
-          bg-[#0f172a]/90
-          border border-white/10
-          shadow-2xl
+          bg-white/10
+          backdrop-blur-2xl
+          border border-white/15
+          shadow-[0_40px_100px_-30px_rgba(37,99,235,0.5)]
         "
       >
         {/* CLOSE */}
         <button
           onClick={onClose}
+          aria-label="Close"
           className="
             absolute
             top-6 right-6
             z-20
             w-12 h-12
-            rounded-2xl
-            bg-white/10
-            hover:bg-blue-500
+            rounded-xl
+            border border-white/15
+            hover:bg-[#2563EB]
+            hover:border-[#2563EB]
+            hover:shadow-[0_0_24px_-4px_rgba(37,99,235,0.7)]
             transition
             flex items-center justify-center
           "
         >
-          <X />
+          <X className="text-white" />
         </button>
 
         <div className="grid lg:grid-cols-2">
           {/* LEFT */}
           <div className="p-12 flex flex-col justify-center">
-            <span className="text-blue-500 font-semibold tracking-widest uppercase">
+            <span className="font-mono text-xs text-[#5B9BFF] font-semibold tracking-widest uppercase">
               {project.category}
             </span>
 
-            <h2 className="mt-6 text-5xl font-black leading-tight">
+            <h2 className="mt-6 font-display text-5xl font-bold leading-tight text-white">
               {project.title}
             </h2>
 
-            <p className="mt-8 text-slate-400 leading-relaxed text-lg">
+            <p className="mt-8 text-white/60 leading-relaxed text-lg">
               {project.description}
             </p>
 
             {/* TECH */}
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="flex flex-wrap gap-3 mt-10">
               {project.tech.map((item, index) => (
                 <div
                   key={index}
                   className="
-                    px-5 py-3
-                    rounded-2xl
+                    px-4 py-2.5
+                    rounded-full
                     bg-white/5
-                    border border-white/10
-                    text-blue-500
+                    backdrop-blur-xl
+                    border border-white/15
+                    font-mono
+                    text-xs
+                    uppercase
+                    tracking-wide
+                    text-[#5B9BFF]
                     font-semibold
                   "
                 >
@@ -83,18 +92,16 @@ export default function PortfolioModal({
             </div>
 
             {/* BUTTON */}
-            <div className="flex gap-5 mt-12">
+            <div className="flex gap-4 mt-12">
               <button
                 className="
                   px-7 py-4
-                  rounded-2xl
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-indigo-500 
+                  rounded-xl
+                  bg-[#2563EB]
+                  text-white
                   font-semibold
-                  hover:scale-105
-                  hover:shadow-xl
-                  hover:shadow-indigo-400/30
+                  hover:bg-[#1D4ED8]
+                  hover:shadow-[0_0_32px_-6px_rgba(37,99,235,0.8)]
                   transition
                 "
               >
@@ -104,10 +111,13 @@ export default function PortfolioModal({
               <button
                 className="
                   px-7 py-4
-                  rounded-2xl
+                  rounded-xl
                   bg-white/5
-                  border border-white/10
-                  hover:bg-white/10
+                  backdrop-blur-xl
+                  border border-white/15
+                  text-white
+                  hover:border-[#2563EB]
+                  hover:text-[#2563EB]
                   transition
                 "
               >
@@ -118,9 +128,6 @@ export default function PortfolioModal({
 
           {/* RIGHT */}
           <div className="relative">
-            {/* GLOW */}
-            <div className="absolute inset-0 bg-blue-500/10 blur-3xl"></div>
-
             <img
               src={project.mockup}
               alt={project.title}
